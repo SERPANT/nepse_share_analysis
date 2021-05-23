@@ -21,7 +21,6 @@ function ChartMapperLine(props) {
           };
         });
 
-        debugger;
         const sorted_value = chartUtil.sortChartData(final_time_list);
 
         if (sorted_value.length > 0) {

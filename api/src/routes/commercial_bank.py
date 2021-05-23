@@ -1,8 +1,11 @@
 from flask import Blueprint, Response
 
+from constants.routes import ROUTES
 from services.commercial_bank_data import commercial_bank_services
 
-commercial_bank_route = Blueprint('commercial_bank_route', __name__, url_prefix='/commercialBank')
+print(ROUTES)
+
+commercial_bank_route = Blueprint('commercial_bank_route', __name__, url_prefix=ROUTES.COMMERCIAL_BANK)
 
 @commercial_bank_route.route('/monthly')
 def monthly_data():

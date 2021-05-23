@@ -21,12 +21,26 @@ class App extends React.Component {
     this.fetchBankData();
   };
 
-  fetchBankData = () => {
-    const bankShareDailyData = bankService.fetchBankDayData();
-    const bankShareWeekData = bankService.fetchBankWeeklyData();
-    const bankShareMonthlyData = bankService.fetchBankMontlyData();
-    const bankShareQuaterlyData = bankService.fetchBankQuaterData();
-    const bankShareYearlyData = bankService.fetchBankYearlyData();
+  fetchBankData = async () => {
+    const bankShareDailyDataPromise = bankService.fetchBankDayData();
+    const bankShareWeekDataPromise = bankService.fetchBankWeeklyData();
+    const bankShareMonthlyDataPromise = bankService.fetchBankMontlyData();
+    const bankShareQuaterlyDataPromise = bankService.fetchBankQuaterData();
+    const bankShareYearlyDataPromise = bankService.fetchBankYearlyData();
+
+    const [
+      bankShareDailyData,
+      bankShareWeekData,
+      bankShareMonthlyData,
+      bankShareQuaterlyData,
+      bankShareYearlyData,
+    ] = await Promise.all([
+      bankShareDailyDataPromise,
+      bankShareWeekDataPromise,
+      bankShareMonthlyDataPromise,
+      bankShareQuaterlyDataPromise,
+      bankShareYearlyDataPromise,
+    ]);
 
     this.setState({
       bankShareDailyData,
