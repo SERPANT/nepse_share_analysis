@@ -1,2 +1,3 @@
 ./scraper-daemon/venv
-./ap/venv
+./api/venv
+./data
