@@ -5,7 +5,9 @@ START_URL = {
         "file_locaion" : {
             "W":"../../../../../data/commercialBank/weekly.json",
             "M": "../../../../../data/commercialBank/monthly.json",
-            "Y": "../../../../../data/commercialBank/yearly.json"
+            "Y": "../../../../../data/commercialBank/yearly.json",
+            "Q": "../../../../../data/commercialBank/quaterly.json",
+            "D": "../../../../../data/commercialBank/daily.json"
         },
         "links": [ 
         {"value": 131, "symbol": "NABIL", "name": "Nabil Bank"},

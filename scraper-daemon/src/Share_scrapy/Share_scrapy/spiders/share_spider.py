@@ -14,8 +14,8 @@ class ShareSpiderSpider(scrapy.Spider):
     allowed_domains = ['http://www.nepalstock.com/']
     time = None
 
-    def __init__(self, category = '', time = ''):
-        self.time = time
+    def __init__(self, category = '', time_val = ''):
+        self.time = time_val
         shares_info = START_URL[category]
         self.share_list = shares_info.links
 
@@ -25,7 +25,7 @@ class ShareSpiderSpider(scrapy.Spider):
         share_info = START_URL[arguments["category"]]
 
         custom_settings = {
-            'FEED_URI' : share_info.file_locaion[arguments['time']],
+            'FEED_URI' : share_info.file_locaion[arguments['time_val']],
             'FEED_FORMATE' : "json"
             }
 
