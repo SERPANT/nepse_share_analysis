@@ -7,6 +7,8 @@ import {
 } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
 
+import NAV_BAR_CATEGORIES from '../../../constants/navbarCategory';
+
 const SideBar = () => {
   return (
     <ProSidebar>
@@ -16,16 +18,9 @@ const SideBar = () => {
         </div>
       </SidebarHeader>
       <Menu iconShape="square">
-        <MenuItem>Commercial Banks</MenuItem>
-        <MenuItem>Development Banks</MenuItem>
-        <MenuItem>Finance Companies</MenuItem>
-        <MenuItem>Micro Fiinance Companies</MenuItem>
-        <MenuItem>Life Insurance Companies</MenuItem>
-        <MenuItem>Non-Life Insurance Companies</MenuItem>
-        <MenuItem>Hydropower Companies</MenuItem>
-        <MenuItem>Manufacturing and Processing Companies</MenuItem>
-        <MenuItem>Trading Companies</MenuItem>
-        <MenuItem> Hotel Lists </MenuItem>
+        {NAV_BAR_CATEGORIES.map(({ label, category }) => (
+          <MenuItem>{label}</MenuItem>
+        ))}
         <SubMenu title="Components">
           <MenuItem>Component 1</MenuItem>
           <MenuItem>Component 2</MenuItem>
