@@ -1,9 +1,9 @@
+import sys
 import json
+import getopt
 import scrapy
 from scrapy import Request
 from datetime import datetime
-import sys
-import getopt
 
 from Share_scrapy.items import NEPSE_share_time_obj
 from Share_scrapy.constants.website_link import START_URL
@@ -19,6 +19,11 @@ class ShareSpiderSpider(scrapy.Spider):
         shares_info = START_URL[category]
         self.share_list = shares_info.links
 
+    def start_requests(self):
+        for company in self.share_list:
+            url = 'http://www.nepalstock.com/company/graphdata/' + str(company["value"]) + "/" + self.time 
+            yield Request(url,callback=self.parse)
+
     @classmethod
     def update_settings(cls, settings):
         arguments = parse_named_command_line_args(sys.argv[2:], 'a:') 
@@ -31,10 +36,6 @@ class ShareSpiderSpider(scrapy.Spider):
 
         settings.setdict(custom_settings, priority='spider')
 
-    def start_requests(self):
-        for company in self.share_list:
-            url = 'http://www.nepalstock.com/company/graphdata/' + str(company["value"]) + "/" + self.time 
-            yield Request(url,callback=self.parse)
     
     def find_company_by_value(self, value):
         for company in self.share_list:
