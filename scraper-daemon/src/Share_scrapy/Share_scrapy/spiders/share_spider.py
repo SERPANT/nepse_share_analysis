@@ -31,7 +31,7 @@ class ShareSpiderSpider(scrapy.Spider):
 
         custom_settings = {
             'FEED_URI' : share_info.file_locaion[arguments['time_val']],
-            'FEED_FORMATE' : "json"
+            'FEED_FORMAT' : "json"
             }
 
         settings.setdict(custom_settings, priority='spider')

@@ -1,8 +1,98 @@
-{"symbol": "SANIMA", "time_form": "W", "share_name": "Sanima Bank Limited", "time_list": [{"time": "2021-05-19 05:45:00", "value": 418.0}, {"time": "2021-05-20 05:45:00", "value": 424.0}, {"time": "2021-05-23 05:45:00", "value": 435.0}, {"time": "2021-05-24 05:45:00", "value": 437.0}, {"time": "2021-05-25 05:45:00", "value": 428.0}]}
-{"symbol": "PCBL", "time_form": "W", "share_name": "Prime Commercial Bank Ltd.", "time_list": [{"time": "2021-05-19 05:45:00", "value": 444.0}, {"time": "2021-05-20 05:45:00", "value": 445.0}, {"time": "2021-05-23 05:45:00", "value": 449.0}, {"time": "2021-05-24 05:45:00", "value": 454.0}, {"time": "2021-05-25 05:45:00", "value": 448.0}]}
-{"symbol": "SBL", "time_form": "W", "share_name": "Siddhartha Bank Limited", "time_list": [{"time": "2021-05-19 05:45:00", "value": 431.0}, {"time": "2021-05-20 05:45:00", "value": 439.0}, {"time": "2021-05-23 05:45:00", "value": 446.0}, {"time": "2021-05-24 05:45:00", "value": 448.0}, {"time": "2021-05-25 05:45:00", "value": 440.0}]}
-{"symbol": "NABIL", "time_form": "W", "share_name": "Nabil Bank", "time_list": [{"time": "2021-05-19 05:45:00", "value": 1302.0}, {"time": "2021-05-20 05:45:00", "value": 1300.0}, {"time": "2021-05-23 05:45:00", "value": 1312.0}, {"time": "2021-05-24 05:45:00", "value": 1320.0}, {"time": "2021-05-25 05:45:00", "value": 1306.0}]}
-{"symbol": "NMB", "time_form": "W", "share_name": "NMB Bank", "time_list": [{"time": "2021-05-19 05:45:00", "value": 427.0}, {"time": "2021-05-20 05:45:00", "value": 429.0}, {"time": "2021-05-23 05:45:00", "value": 436.0}, {"time": "2021-05-24 05:45:00", "value": 437.0}, {"time": "2021-05-25 05:45:00", "value": 431.0}]}
-{"symbol": "SRBL", "time_form": "W", "share_name": "Sunrise Bank Limited", "time_list": [{"time": "2021-05-19 05:45:00", "value": 322.0}, {"time": "2021-05-20 05:45:00", "value": 333.0}, {"time": "2021-05-23 05:45:00", "value": 339.0}, {"time": "2021-05-24 05:45:00", "value": 338.0}, {"time": "2021-05-25 05:45:00", "value": 332.0}]}
-{"symbol": "CORBL", "time_form": "W", "share_name": "Corporate Development Bank Limited", "time_list": [{"time": "2021-05-19 05:45:00", "value": 722.0}, {"time": "2021-05-20 05:45:00", "value": 724.0}, {"time": "2021-05-23 05:45:00", "value": 742.0}, {"time": "2021-05-24 05:45:00", "value": 750.0}, {"time": "2021-05-25 05:45:00", "value": 750.0}]}
-{"symbol": "SCB", "time_form": "W", "share_name": "Standard Chartered Bank Limited", "time_list": [{"time": "2021-05-19 05:45:00", "value": 599.0}, {"time": "2021-05-20 05:45:00", "value": 599.0}, {"time": "2021-05-23 05:45:00", "value": 605.0}, {"time": "2021-05-24 05:45:00", "value": 610.0}, {"time": "2021-05-25 05:45:00", "value": 603.0}]}
+[
+  {
+    "symbol": "SCB",
+    "time_form": "W",
+    "share_name": "Standard Chartered Bank Limited",
+    "time_list": [
+      { "time": "2021-05-19 05:45:00", "value": 599.0 },
+      { "time": "2021-05-20 05:45:00", "value": 599.0 },
+      { "time": "2021-05-23 05:45:00", "value": 605.0 },
+      { "time": "2021-05-24 05:45:00", "value": 610.0 },
+      { "time": "2021-05-25 05:45:00", "value": 603.0 }
+    ]
+  },
+  {
+    "symbol": "PCBL",
+    "time_form": "W",
+    "share_name": "Prime Commercial Bank Ltd.",
+    "time_list": [
+      { "time": "2021-05-19 05:45:00", "value": 444.0 },
+      { "time": "2021-05-20 05:45:00", "value": 445.0 },
+      { "time": "2021-05-23 05:45:00", "value": 449.0 },
+      { "time": "2021-05-24 05:45:00", "value": 454.0 },
+      { "time": "2021-05-25 05:45:00", "value": 448.0 }
+    ]
+  },
+  {
+    "symbol": "SRBL",
+    "time_form": "W",
+    "share_name": "Sunrise Bank Limited",
+    "time_list": [
+      { "time": "2021-05-19 05:45:00", "value": 322.0 },
+      { "time": "2021-05-20 05:45:00", "value": 333.0 },
+      { "time": "2021-05-23 05:45:00", "value": 339.0 },
+      { "time": "2021-05-24 05:45:00", "value": 338.0 },
+      { "time": "2021-05-25 05:45:00", "value": 332.0 }
+    ]
+  },
+  {
+    "symbol": "SANIMA",
+    "time_form": "W",
+    "share_name": "Sanima Bank Limited",
+    "time_list": [
+      { "time": "2021-05-19 05:45:00", "value": 418.0 },
+      { "time": "2021-05-20 05:45:00", "value": 424.0 },
+      { "time": "2021-05-23 05:45:00", "value": 435.0 },
+      { "time": "2021-05-24 05:45:00", "value": 437.0 },
+      { "time": "2021-05-25 05:45:00", "value": 428.0 }
+    ]
+  },
+  {
+    "symbol": "SBL",
+    "time_form": "W",
+    "share_name": "Siddhartha Bank Limited",
+    "time_list": [
+      { "time": "2021-05-19 05:45:00", "value": 431.0 },
+      { "time": "2021-05-20 05:45:00", "value": 439.0 },
+      { "time": "2021-05-23 05:45:00", "value": 446.0 },
+      { "time": "2021-05-24 05:45:00", "value": 448.0 },
+      { "time": "2021-05-25 05:45:00", "value": 440.0 }
+    ]
+  },
+  {
+    "symbol": "NMB",
+    "time_form": "W",
+    "share_name": "NMB Bank",
+    "time_list": [
+      { "time": "2021-05-19 05:45:00", "value": 427.0 },
+      { "time": "2021-05-20 05:45:00", "value": 429.0 },
+      { "time": "2021-05-23 05:45:00", "value": 436.0 },
+      { "time": "2021-05-24 05:45:00", "value": 437.0 },
+      { "time": "2021-05-25 05:45:00", "value": 431.0 }
+    ]
+  },
+  {
+    "symbol": "NABIL",
+    "time_form": "W",
+    "share_name": "Nabil Bank",
+    "time_list": [
+      { "time": "2021-05-19 05:45:00", "value": 1302.0 },
+      { "time": "2021-05-20 05:45:00", "value": 1300.0 },
+      { "time": "2021-05-23 05:45:00", "value": 1312.0 },
+      { "time": "2021-05-24 05:45:00", "value": 1320.0 },
+      { "time": "2021-05-25 05:45:00", "value": 1306.0 }
+    ]
+  },
+  {
+    "symbol": "CORBL",
+    "time_form": "W",
+    "share_name": "Corporate Development Bank Limited",
+    "time_list": [
+      { "time": "2021-05-19 05:45:00", "value": 722.0 },
+      { "time": "2021-05-20 05:45:00", "value": 724.0 },
+      { "time": "2021-05-23 05:45:00", "value": 742.0 },
+      { "time": "2021-05-24 05:45:00", "value": 750.0 },
+      { "time": "2021-05-25 05:45:00", "value": 750.0 }
+    ]
+  }
+]
