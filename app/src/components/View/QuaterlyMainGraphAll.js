@@ -10,13 +10,13 @@ function QuaterlyMainGraph(props) {
 
     const time_line_data = time_list.map(({ time, value }) => {
       return {
-        x: new Date(time),
+        x: time,
         y: value,
       };
     });
 
     return {
-      name: symbol,
+      label: symbol,
       data: time_line_data,
     };
   });
@@ -27,7 +27,7 @@ function QuaterlyMainGraph(props) {
       <NavBar />
       <h1>Quaterly Main Grapy</h1>
       <div>
-        <LineChart data={final_data} height={700} />
+        <LineChart datasets={final_data} height={700} />
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ export const fetchBankDayData = async () => {
 
 export async function fetchBankWeeklyData() {
   const { data } = await http.get(`${CONFIG.END_POINTS.commercialBank}/weekly`);
+
   return data;
 }
 

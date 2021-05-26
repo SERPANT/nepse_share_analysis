@@ -54,3 +54,7 @@
 .list-group-item {
   background-color: lightblue;
 }
+
+.chart-container {
+  height: 500px;
+}

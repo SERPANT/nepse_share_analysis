@@ -1,9 +1,7 @@
 import React from 'react';
 
 import LineChart from './LineChart';
-
 import ShareDetails from './ShareDetails';
-import * as chartUtil from '../../../utils/chart';
 
 function ChartMapperLine(props) {
   return (
@@ -14,14 +12,14 @@ function ChartMapperLine(props) {
         let valueAtTheStart = {};
         let valueAtTheEnd = {};
 
-        const final_time_list = time_list.map(({ time, value }) => {
+        const sorted_value = time_list.map(({ time, value }) => {
           return {
-            x: new Date(time),
+            x: time,
             y: value,
           };
         });
 
-        const sorted_value = chartUtil.sortChartData(final_time_list);
+        // const sorted_value = chartUtil.sortChartData(final_time_list);
 
         if (sorted_value.length > 0) {
           valueAtTheStart = sorted_value[0];
@@ -50,7 +48,7 @@ function ChartMapperLine(props) {
               <LineChart
                 key={symbol}
                 height={200}
-                data={[{ name: symbol, data: final_time_list }]}
+                datasets={[{ label: symbol, data: sorted_value }]}
               />
               <ShareDetails
                 smallestValue={smallestValue}
