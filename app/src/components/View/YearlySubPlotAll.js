@@ -14,10 +14,7 @@ function YearlySubPlotAll(props) {
           <SideBar />
         </div>
         <div className="col-sm-10">
-          <ChartMapperLine
-            shareData={props.bankShareYearlyData}
-            dateOnly={true}
-          />
+          <ChartMapperLine shareData={props.shareYearlyData} dateOnly={true} />
         </div>
       </div>
     </div>

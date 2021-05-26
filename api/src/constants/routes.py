@@ -1,5 +1,5 @@
 from box import Box
 
 ROUTES = Box({
-    "COMMERCIAL_BANK": "/commercialBank"
+    "SHARE_INFO": "/api/shareinfo"
 })

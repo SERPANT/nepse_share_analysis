@@ -10,7 +10,7 @@ import { MAIN_GRAPH_HEIGHT } from '../../constants/graph';
 
 // import LineChart from
 function DailyMainGraph(props) {
-  const final_data = props.bankShareDailyData.map((bankData) => {
+  const final_data = props.shareDailyData.map((bankData) => {
     const { symbol, time_list } = bankData;
 
     const time_line_data = time_list.map(({ time, value }) => {

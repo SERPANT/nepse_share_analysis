@@ -9,7 +9,7 @@ import dateUtil from '../../utils/date';
 import { MAIN_GRAPH_HEIGHT } from '../../constants/graph';
 
 function WeeklyMainGraph(props) {
-  const final_data = props.bankShareWeekData.map((bankData) => {
+  const final_data = props.shareWeekData.map((bankData) => {
     const { symbol, time_list } = bankData;
 
     const time_line_data = time_list.map(({ time, value }) => {

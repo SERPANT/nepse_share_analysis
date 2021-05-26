@@ -1,7 +1,7 @@
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const END_POINTS = {
-  commercialBank: `${BASE_URL}/commercialBank`,
+  shareinfo: `${BASE_URL}/shareinfo`,
 };
 
 const config = {

@@ -16,7 +16,7 @@ function DailySubPlot(props) {
           <SideBar />
         </div>
         <div className="col-sm-10">
-          <ChartMapperLine shareData={props.bankShareDailyData} />
+          <ChartMapperLine shareData={props.shareDailyData} />
         </div>
       </div>
     </div>

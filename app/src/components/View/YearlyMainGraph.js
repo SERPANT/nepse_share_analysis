@@ -9,7 +9,7 @@ import dateUtil from '../../utils/date';
 import { MAIN_GRAPH_HEIGHT } from '../../constants/graph';
 
 function YearlyMainGraph(props) {
-  const final_data = props.bankShareYearlyData.map((bankData) => {
+  const final_data = props.shareYearlyData.map((bankData) => {
     const { symbol, time_list } = bankData;
 
     const time_line_data = time_list.map(({ time, value }) => {

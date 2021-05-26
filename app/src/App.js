@@ -1,6 +1,6 @@
 import React from 'react';
 
-import * as bankService from './services/bankService';
+import * as shareServies from './services/shareService';
 
 import Routes from './Routes';
 
@@ -9,45 +9,51 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      bankShareDailyData: [],
-      bankShareWeekData: [],
-      bankShareMonthlyData: [],
-      bankShareQuaterlyData: [],
-      bankShareYearlyData: [],
+      shareDailyData: [],
+      shareWeekData: [],
+      shareMonthlyData: [],
+      shareQuaterlyData: [],
+      shareYearlyData: [],
     };
   }
 
   componentDidMount = () => {
-    this.fetchBankData();
+    this.fetchShareData();
   };
 
-  fetchBankData = async () => {
-    const bankShareDailyDataPromise = bankService.fetchBankDayData();
-    const bankShareWeekDataPromise = bankService.fetchBankWeeklyData();
-    const bankShareMonthlyDataPromise = bankService.fetchBankMontlyData();
-    const bankShareQuaterlyDataPromise = bankService.fetchBankQuaterData();
-    const bankShareYearlyDataPromise = bankService.fetchBankYearlyData();
+  fetchShareData = async () => {
+    const shareDailyDataPromise = shareServies.fetchDailyData('commercialBank');
+    const shareWeekDataPromise = shareServies.fetchWeeklyData('commercialBank');
+    const shareMonthlyDataPromise = shareServies.fetchMonthlyData(
+      'commercialBank'
+    );
+    const shareQuaterlyDataPromise = shareServies.fetchQuaterData(
+      'commercialBank'
+    );
+    const shareYearlyDataPromise = shareServies.fetchYearlyData(
+      'commercialBank'
+    );
 
     const [
-      bankShareDailyData,
-      bankShareWeekData,
-      bankShareMonthlyData,
-      bankShareQuaterlyData,
-      bankShareYearlyData,
+      shareDailyData,
+      shareWeekData,
+      shareMonthlyData,
+      shareQuaterlyData,
+      shareYearlyData,
     ] = await Promise.all([
-      bankShareDailyDataPromise,
-      bankShareWeekDataPromise,
-      bankShareMonthlyDataPromise,
-      bankShareQuaterlyDataPromise,
-      bankShareYearlyDataPromise,
+      shareDailyDataPromise,
+      shareWeekDataPromise,
+      shareMonthlyDataPromise,
+      shareQuaterlyDataPromise,
+      shareYearlyDataPromise,
     ]);
 
     this.setState({
-      bankShareDailyData,
-      bankShareWeekData,
-      bankShareMonthlyData,
-      bankShareQuaterlyData,
-      bankShareYearlyData,
+      shareDailyData,
+      shareWeekData,
+      shareMonthlyData,
+      shareQuaterlyData,
+      shareYearlyData,
     });
   };
 
@@ -56,21 +62,21 @@ class App extends React.Component {
    */
   render() {
     const {
-      bankShareDailyData,
-      bankShareWeekData,
-      bankShareMonthlyData,
-      bankShareQuaterlyData,
-      bankShareYearlyData,
+      shareDailyData,
+      shareWeekData,
+      shareMonthlyData,
+      shareQuaterlyData,
+      shareYearlyData,
     } = this.state;
 
     return (
       <div className="container-fluid">
         <Routes
-          bankShareDailyData={bankShareDailyData}
-          bankShareWeekData={bankShareWeekData}
-          bankShareMonthlyData={bankShareMonthlyData}
-          bankShareQuaterlyData={bankShareQuaterlyData}
-          bankShareYearlyData={bankShareYearlyData}
+          shareDailyData={shareDailyData}
+          shareWeekData={shareWeekData}
+          shareMonthlyData={shareMonthlyData}
+          shareQuaterlyData={shareQuaterlyData}
+          shareYearlyData={shareYearlyData}
         />
       </div>
     );

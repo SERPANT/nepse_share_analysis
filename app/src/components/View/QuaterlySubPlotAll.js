@@ -14,7 +14,7 @@ function QuaterlySubPlotAll(props) {
         </div>
         <div className="col-sm-10">
           <ChartMapperLine
-            shareData={props.bankShareQuaterlyData}
+            shareData={props.shareQuaterlyData}
             dateOnly={true}
           />
         </div>

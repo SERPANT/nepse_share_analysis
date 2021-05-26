@@ -13,10 +13,7 @@ function MonthlySubPlotAll(props) {
           <SideBar />
         </div>
         <div className="col-sm-10">
-          <ChartMapperLine
-            shareData={props.bankShareMonthlyData}
-            dateOnly={true}
-          />
+          <ChartMapperLine shareData={props.shareMonthlyData} dateOnly={true} />
         </div>
       </div>
     </div>

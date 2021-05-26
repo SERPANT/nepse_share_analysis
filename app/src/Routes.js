@@ -23,84 +23,74 @@ const Routes = (props) => {
           exact
           path={ROUTES.DAILY_MAIN_GRAPH}
           render={() => (
-            <DailyMainGraph bankShareDailyData={props.bankShareDailyData} />
+            <DailyMainGraph shareDailyData={props.shareDailyData} />
           )}
         />
         <Route
           exact
           path={ROUTES.DAILY_SUB_PLOT_ALL}
           render={() => (
-            <DailySubPlotAll bankShareDailyData={props.bankShareDailyData} />
+            <DailySubPlotAll shareDailyData={props.shareDailyData} />
           )}
         />
         <Route
           exact
           path={ROUTES.MONTHLY_SUB_PLOT_ALL}
           render={() => (
-            <MonthlySubPlotAll
-              bankShareMonthlyData={props.bankShareMonthlyData}
-            />
+            <MonthlySubPlotAll shareMonthlyData={props.shareMonthlyData} />
           )}
         />
         <Route
           exact
           path={ROUTES.MONTHLY_MAIN_GRAPH}
           render={() => (
-            <MonthlyMainGraph
-              bankShareMonthlyData={props.bankShareMonthlyData}
-            />
+            <MonthlyMainGraph shareMonthlyData={props.shareMonthlyData} />
           )}
         />
         <Route
           exact
           path={ROUTES.WEEKLY_MAIN_GRAPH}
-          render={() => (
-            <WeeklyMainGraph bankShareWeekData={props.bankShareWeekData} />
-          )}
+          render={() => <WeeklyMainGraph shareWeekData={props.shareWeekData} />}
         />
         <Route
           exact
           path={ROUTES.WEEKLY_SUB_PLOT_ALL}
           render={() => (
-            <WeeklySubPlotAll bankShareWeekData={props.bankShareWeekData} />
+            <WeeklySubPlotAll shareWeekData={props.shareWeekData} />
           )}
         />
         <Route
           exact
           path={ROUTES.QUATERLY_SUB_PLOT_ALL}
           render={() => (
-            <QuaterlySubPlotAll
-              bankShareQuaterlyData={props.bankShareQuaterlyData}
-            />
+            <QuaterlySubPlotAll shareQuaterlyData={props.shareQuaterlyData} />
           )}
         />
         <Route
           exact
           path={ROUTES.QUATERLY_MAIN_GRAPH}
           render={() => (
-            <QuaterlyMainGraph
-              bankShareQuaterlyData={props.bankShareQuaterlyData}
-            />
+            <QuaterlyMainGraph shareQuaterlyData={props.shareQuaterlyData} />
           )}
         />
         <Route
           exact
           path={ROUTES.YEARLY_SUB_PLOT_ALL}
           render={() => (
-            <YearlySubPlotAll bankShareYearlyData={props.bankShareYearlyData} />
+            <YearlySubPlotAll shareYearlyData={props.shareYearlyData} />
           )}
         />
         <Route
           exact
           path={ROUTES.YEARLY_MAIN_GRAPH}
           render={() => (
-            <YearlyMainGraph bankShareYearlyData={props.bankShareYearlyData} />
+            <YearlyMainGraph shareYearlyData={props.shareYearlyData} />
           )}
         />
         <Route
           path={ROUTES.HOME}
           render={() => (
-            <DailyMainGraph bankShareDailyData={props.bankShareDailyData} />
+            <DailyMainGraph shareDailyData={props.shareDailyData} />
           )}
         />
       </Switch>

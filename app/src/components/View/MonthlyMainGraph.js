@@ -9,7 +9,7 @@ import dateUtil from '../../utils/date';
 import { MAIN_GRAPH_HEIGHT } from '../../constants/graph';
 
 function MonthlyMainGraph(props) {
-  const final_data = props.bankShareMonthlyData.map((bankData) => {
+  const final_data = props.shareMonthlyData.map((bankData) => {
     const { symbol, time_list } = bankData;
 
     const time_line_data = time_list.map(({ time, value }) => {

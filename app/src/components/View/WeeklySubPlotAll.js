@@ -13,10 +13,7 @@ function WeeklySubPlotAll(props) {
           <SideBar />
         </div>
         <div className="col-sm-10">
-          <ChartMapperLine
-            shareData={props.bankShareWeekData}
-            dateOnly={true}
-          />
+          <ChartMapperLine shareData={props.shareWeekData} dateOnly={true} />
         </div>
       </div>
     </div>
