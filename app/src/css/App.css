@@ -55,6 +55,7 @@
   background-color: lightblue;
 }
 
-.chart-container {
-  height: 500px;
+.dashboard-header {
+  padding: 10px;
+  text-align: center;
 }

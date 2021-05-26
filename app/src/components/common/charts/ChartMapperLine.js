@@ -3,6 +3,9 @@ import React from 'react';
 import LineChart from './LineChart';
 import ShareDetails from './ShareDetails';
 
+import dateUtil from '../../../utils/date';
+import { SUB_PLOT_HEIGHT } from '../../../constants/graph';
+
 function ChartMapperLine(props) {
   return (
     <div>
@@ -14,7 +17,7 @@ function ChartMapperLine(props) {
 
         const sorted_value = time_list.map(({ time, value }) => {
           return {
-            x: time,
+            x: props.dateOnly ? dateUtil.getOnlyDate(time) : time,
             y: value,
           };
         });
@@ -47,7 +50,7 @@ function ChartMapperLine(props) {
             <div className="card-body">
               <LineChart
                 key={symbol}
-                height={200}
+                height={SUB_PLOT_HEIGHT}
                 datasets={[{ label: symbol, data: sorted_value }]}
               />
               <ShareDetails

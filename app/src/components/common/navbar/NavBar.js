@@ -37,26 +37,26 @@ function NavBar() {
       />
 
       <NavTab
-        label="Quaterly Sub plots"
-        to={ROUTES.QUATERLY_SUB_PLOT_ALL}
-        isActive={false}
-      />
-
-      <NavTab
         label="Quaterly Main graph"
         to={ROUTES.QUATERLY_MAIN_GRAPH}
         isActive={false}
       />
 
       <NavTab
-        label="Yearly Sub plots"
-        to={ROUTES.YEARLY_SUB_PLOT_ALL}
+        label="Quaterly Sub plots"
+        to={ROUTES.QUATERLY_SUB_PLOT_ALL}
         isActive={false}
       />
 
       <NavTab
         label="Yearly Main graph"
         to={ROUTES.YEARLY_MAIN_GRAPH}
+        isActive={false}
+      />
+
+      <NavTab
+        label="Yearly Sub plots"
+        to={ROUTES.YEARLY_SUB_PLOT_ALL}
         isActive={false}
       />
     </nav>

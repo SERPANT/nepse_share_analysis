@@ -3,6 +3,10 @@ import React from 'react';
 import Header from '../common/Header';
 import NavBar from '../common/navbar/NavBar';
 import LineChart from '../common/charts/LineChart';
+import SideBar from '../common/sidebar/sidebar';
+
+import dateUtil from '../../utils/date';
+import { MAIN_GRAPH_HEIGHT } from '../../constants/graph';
 
 function YearlyMainGraph(props) {
   const final_data = props.bankShareYearlyData.map((bankData) => {
@@ -10,7 +14,7 @@ function YearlyMainGraph(props) {
 
     const time_line_data = time_list.map(({ time, value }) => {
       return {
-        x: time,
+        x: dateUtil.getOnlyDate(time),
         y: value,
       };
     });
@@ -25,9 +29,13 @@ function YearlyMainGraph(props) {
     <div>
       <Header />
       <NavBar />
-      <h1>Yearly Main Grapy</h1>
-      <div>
-        <LineChart datasets={final_data} height={700} />
+      <div className="row">
+        <div className="col-sm-2">
+          <SideBar />
+        </div>
+        <div className="col-sm-10">
+          <LineChart datasets={final_data} height={MAIN_GRAPH_HEIGHT} />
+        </div>
       </div>
     </div>
   );

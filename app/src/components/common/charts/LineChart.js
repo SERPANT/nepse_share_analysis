@@ -4,7 +4,7 @@ import { Line } from 'react-chartjs-2';
 
 class LineChart extends React.Component {
   render() {
-    const { datasets } = this.props;
+    const { datasets, height } = this.props;
 
     const finalDatasets = datasets.map(({ data, label }) => {
       return {
@@ -12,7 +12,7 @@ class LineChart extends React.Component {
         barThickness: 6,
         maxBarThickness: 8,
         minBarLength: 2,
-        borderColor: 'rgb(75, 192, 192)',
+        borderColor: 'rgb(34,139,34)',
         data,
         tension: 0.1,
         label,
@@ -22,7 +22,7 @@ class LineChart extends React.Component {
     });
 
     return (
-      <div className="chart-container">
+      <div style={{ height: height || 500 }}>
         <Line
           data={{
             datasets: finalDatasets,
