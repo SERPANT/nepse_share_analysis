@@ -138,7 +138,7 @@ START_URL = {
             {"name": "National Microfinance Laghubitta Bittiya Sanstha Ltd.", "symbol": "NMFBS", "value": 2746},
             {"name": "Suryodaya Laghubitta Bittiya Sanstha Ltd.", "symbol": "SLBS", "value": 2750},
             {"name": "Ganapati Microfinance Bittiya Sanstha Ltd", "symbol": "GMFBS", "value": 2815},
-            {"name": "Civil Laghubitta Bittiya Sanstha Ltd.", "symbol": "CLBSL", "value": 693}
+            {"name": "Civil Laghubitta Bittiya Sanstha Ltd.", "symbol": "CLBSL", "value": 693},
             {"name": "Infinity Laghubitta Bittiya Sanstha Limited", "symbol": "ILBS", "value": 2832},
             {"name": "Forward Microfinance Laghubitta Bittiya Sanstha Ltd", "symbol": "FOWAD", "value": 2758},
             {"name": "Samata Gharelu Laghubitta Bittiya Sanstha Limited", "symbol": "SMATA", "value": 2761},
@@ -154,11 +154,102 @@ START_URL = {
             {"name": "Swabhimaan Laghubitta Bittiya Sanstha Ltd", "symbol": "SMFBS", "value": 2829},
             {"name": "SABAIKO LAGHUBITTA BITTIYA SANSTHA LIMITED", "symbol": "SABSL", "value": 2843},
             {"name": "Aarambha Chautari Laghubitta Bittiya Sanstha Limited", "symbol": "ACLBSL", "value": 2790},
-            {"name": "Unnati Sahakarya Laghubitta Bittiya Sanstha Limited", "symbol": "USLB", "value": 2774}
+            {"name": "Unnati Sahakarya Laghubitta Bittiya Sanstha Limited", "symbol": "USLB", "value": 2774},
             {"name": "Sarathi Nepal Laghubitta Bittiya Sanstha Limited", "symbol": "SNLB", "value": 592},
             {"name": "Kisan Lagubitta Bittiya Sanstha Limited", "symbol": "KLBSL", "value": 694},
             {"name": "Meromicrofinance Laghubitta Bittiya Sanstha Limited Promoter Share", "symbol": "MEROPO", "value": 1742}
         ]
+    }),
+    "Hotel": Box({
+        "file_location":{
+            "W":"../../../../../data/hotel/weekly.json",
+            "M": "../../../../../data/hotel/monthly.json",
+            "Y": "../../../../../data/hotel/yearly.json",
+            "Q": "../../../../../data/hotel/quaterly.json",
+            "D": "../../../../../data/hotel/daily.json"
+        },
+        "links": [
+            {"name": "Oriental Hotels Limited", "symbol": "OHL", "value": 149},
+            {"name": "Soaltee Hotel Limited", "symbol": "SHL", "value": 147},
+            {"name": "Taragaon Regency Hotel Limited", "symbol": "TRH", "value": 148},
+            {"name": "Chandragiri Hills Limited", "symbol": "CGH", "value": 2917}
+        ]
+    }),
+    "HydroPower": Box({
+        "file_location": {
+            "W":"../../../../../data/hydropower/weekly.json",
+            "M": "../../../../../data/hydropower/monthly.json",
+            "Y": "../../../../../data/hydropower/yearly.json",
+            "Q": "../../../../../data/hydropower/quaterly.json",
+            "D": "../../../../../data/hydropower/daily.json"
+        },
+        "links": [
+            {"name": "Arun Valley Hydropower Development Co. Ltd.", "symbol": "AHPC", "value": 360 },
+            {"name": "Butwal Power Company Limited", "symbol": "BPCL", "value": 153},
+            {"name": "Chilime Hydropower Company Limited", "symbol": "CHCL", "value": 154},
+            {"name": "National Hydro Power Company Limited", "symbol": "NHPC", "value": 152},
+            {"name": "Sanima Mai Hydropower Ltd.", "symbol": "SHPC", "value": 591},
+            {"name": "Ridi Hydropower Development Company Ltd.", "symbol": "RHPC", "value": 610},
+            {"name": "Himalaya Urja Bikas Company Limited", "symbol": "HURJA", "value": 2824},
+            {"name": "Arun Kabeli Power Ltd.", "symbol": "AKPL", "value": 2757 },
+            {"name": "Barun Hydropower Co. Ltd.", "symbol": "BARUN", "value": 686},
+            {"name": "Api Power Company Ltd.", "symbol": "API", "value": 697},
+            {"name": "Ngadi Group Power Ltd.", "symbol": "NGPL", "value": 2743},
+            {"name": "SANJEN JALAVIDHYUT COMPANY LIMITED", "symbol": "SJCL", "value": 2842},
+            {"name": "RASUWAGADHI HYDROPOWER COMPANY LIMITED", "symbol": "RHPL", "value": 2841},
+            {"name": "United Modi Hydropower Ltd.", "symbol": "UMHL", "value": 2760}
+        ]
+    }),
+    "LifeInsurance": Box({
+        "file_location": {
+            "W":"../../../../../data/lifeinsurance/weekly.json",
+            "M": "../../../../../data/lifeinsurance/monthly.json",
+            "Y": "../../../../../data/lifeinsurance/yearly.json",
+            "Q": "../../../../../data/lifeinsurance/quaterly.json",
+            "D": "../../../../../data/lifeinsurance/daily.json"
+        },
+        "links": [
+            {"name": "Asian Life Insurance Co. Limited", "symbol": "ALICL", "value": 385},
+            {"name": "Gurans Life Insurance Company Ltd.", "symbol": "GLICL", "value": 447},
+            {"name": "Life Insurance Co. Nepal", "symbol": "LICN", "value": 188},
+            {"name": "Nepal Life Insurance Co. Ltd.", "symbol": "NLIC", "value": 187},
+            {"name": "National Life Insurance Co. Ltd.", "symbol": "NLICL", "value": 178},
+            {"name": "Prime Life Insurance Company Limited", "symbol": "PLIC", "value": 393},
+            {"name": "Surya Life Insurance Company Limited", "symbol": "SLICL", "value": 403},
+            {"name": "Jyoti Life Insurance Company Limited", "symbol": "JLI", "value": 2929},
+            {"name": "Reliance Life Insurance Company Limited", "symbol": "RLI", "value": 2900},
+            {"name": "Prabhu Life Insurance Limited", "symbol": "PLI", "value": 2915},
+        ]
+    }),
+    "NonLifeInsurance": Box({
+        "file_location": {
+            "W":"../../../../../data/nonlifeinstitution/weekly.json",
+            "M": "../../../../../data/nonlifeinstitution/monthly.json",
+            "Y": "../../../../../data/nonlifeinstitution/yearly.json",
+            "Q": "../../../../../data/nonlifeinstitution/quaterly.json",
+            "D": "../../../../../data/nonlifeinstitution/daily.json"
+        },
+        "links": [
+            {"name": "Everest Insurance Co. Ltd.", "symbol": "EIC", "value": 181},
+            {"name": "Himalayan General Insurance Co. Ltd", "symbol": "HGI", "value": 179},
+            {"name": "Lumbini General Insurance Co. Ltd.", "symbol": "LGIL", "value": 190},
+            {"name": "Nepal Insurance Co. Ltd.", "symbol": "NICL", "value": 176},
+            {"name": "Neco Insurance Co. Ltd.", "symbol": "NIL", "value": 183},
+            {"name": "NLG Insurance Company Ltd.", "symbol": "NLG", "value": 559},
+            {"name": "Premier Insurance Co. Ltd.", "symbol": "PIC", "value": 182 },
+            {"name": "Prudential Insurance Co. Ltd.", "symbol": "PICL", "value": 189},
+            {"name": "Sagarmatha Insurance Co. Ltd.", "symbol": "SIC", "value":185 },
+            {"name": "Shikhar Insurance Co. Ltd.", "symbol": "SICL", "value": 192},
+            {"name": "Siddhartha Insurance Ltd.", "symbol": "SIL", "value": 280},
+            {"name": "United Insurance Co. (Nepal) Ltd.", "symbol": "UIC", "value": 180 },
+            {"name": "Prabhu Insurance Ltd.", "symbol": "PRIN", "value": 184},
+            {"name": "Rastriya Beema Company Limited", "symbol": "RBCL", "value": 177},
+            {"name": "IME General Insurance Ltd.", "symbol": "IGI", "value": 186},
+            {"name": "AJOD Insurance Limited", "symbol": "AIL", "value":2893 },
+            {"name": "Sanima General Insurance Company Limited", "symbol": "SGI", "value":2908 },
+            {"name": "General Insurance Company Limited", "symbol": "GIC", "value": 2905}
+        ]
     })
+
 }
 
