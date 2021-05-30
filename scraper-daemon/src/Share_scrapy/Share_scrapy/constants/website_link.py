@@ -139,6 +139,25 @@ START_URL = {
             {"name": "Suryodaya Laghubitta Bittiya Sanstha Ltd.", "symbol": "SLBS", "value": 2750},
             {"name": "Ganapati Microfinance Bittiya Sanstha Ltd", "symbol": "GMFBS", "value": 2815},
             {"name": "Civil Laghubitta Bittiya Sanstha Ltd.", "symbol": "CLBSL", "value": 693}
+            {"name": "Infinity Laghubitta Bittiya Sanstha Limited", "symbol": "ILBS", "value": 2832},
+            {"name": "Forward Microfinance Laghubitta Bittiya Sanstha Ltd", "symbol": "FOWAD", "value": 2758},
+            {"name": "Samata Gharelu Laghubitta Bittiya Sanstha Limited", "symbol": "SMATA", "value": 2761},
+            {"name": "Mahuli Laghubitta Bittiya Sanstha Ltd.", "symbol": "MSLB", "value": 2768},
+            {"name": "Global IME Laghubitta Bittiya Sanstha Ltd.", "symbol": "GILB", "value": 705},
+            {"name": "Support Microfinance Bittiya Sanstha Ltd.", "symbol": "SMB", "value": 2771},
+            {"name": "Grameen Bikas Laghubitta Bittiya Sanstha Ltd.", "symbol": "GBLBS", "value": 583},
+            {"name": "Mahila Laghubitta Bittiya Sanstha Limited", "symbol": "MLBSL", "value": 2925},
+            {"name": "Gurans Laghubitta Bittiya Sanstha Limited", "symbol": "GLBSL", "value": 2826},
+            {"name": "NIC Asia Laghubitta Biitiya Sanstha Limited", "symbol": "NICLBSL", "value": 2887},
+            {"name": "Samudayik Laghubitta Bittiya Sanstha Limited", "symbol": "SLBSL", "value": 2804},
+            {"name": "Sadhana Laghubitta Bittiya Sanstha Limited", "symbol": "SDLBSL", "value": 2896},
+            {"name": "Swabhimaan Laghubitta Bittiya Sanstha Ltd", "symbol": "SMFBS", "value": 2829},
+            {"name": "SABAIKO LAGHUBITTA BITTIYA SANSTHA LIMITED", "symbol": "SABSL", "value": 2843},
+            {"name": "Aarambha Chautari Laghubitta Bittiya Sanstha Limited", "symbol": "ACLBSL", "value": 2790},
+            {"name": "Unnati Sahakarya Laghubitta Bittiya Sanstha Limited", "symbol": "USLB", "value": 2774}
+            {"name": "Sarathi Nepal Laghubitta Bittiya Sanstha Limited", "symbol": "SNLB", "value": 592},
+            {"name": "Kisan Lagubitta Bittiya Sanstha Limited", "symbol": "KLBSL", "value": 694},
+            {"name": "Meromicrofinance Laghubitta Bittiya Sanstha Limited Promoter Share", "symbol": "MEROPO", "value": 1742}
         ]
     })
 }
