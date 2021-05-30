@@ -9,7 +9,10 @@ import dateUtil from '../../utils/date';
 import { MAIN_GRAPH_HEIGHT } from '../../constants/graph';
 
 function YearlyMainGraph(props) {
-  const final_data = props.shareYearlyData.map((bankData) => {
+  const { shareYearlyData, loading } = props;
+  const { onChangeCategory } = props;
+
+  const final_data = shareYearlyData.map((bankData) => {
     const { symbol, time_list } = bankData;
 
     const time_line_data = time_list.map(({ time, value }) => {
@@ -31,7 +34,7 @@ function YearlyMainGraph(props) {
       <NavBar />
       <div className="row">
         <div className="col-sm-2">
-          <SideBar />
+          <SideBar onNavItemClick={onChangeCategory} />
         </div>
         <div className="col-sm-10">
           <LineChart datasets={final_data} height={MAIN_GRAPH_HEIGHT} />

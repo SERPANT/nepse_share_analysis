@@ -1,3 +1,6 @@
 DATA_FOLDER_NAME = {
-    "commercialBank": "commercialBank"
+    "commercialBank": "commercialBank",
+    "developmentBank": "developmentBank",
+    "financialCompanies": "financialCompanies",
+    "microfinance": "microfinance"
 }

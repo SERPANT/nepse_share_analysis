@@ -14,6 +14,8 @@ class App extends React.Component {
       shareMonthlyData: [],
       shareQuaterlyData: [],
       shareYearlyData: [],
+      category: 'commercialBank',
+      loading: false,
     };
   }
 
@@ -21,18 +23,18 @@ class App extends React.Component {
     this.fetchShareData();
   };
 
+  onChangeCategory = (category) => {
+    this.setState({ category }, this.fetchShareData);
+  };
+
   fetchShareData = async () => {
-    const shareDailyDataPromise = shareServies.fetchDailyData('commercialBank');
-    const shareWeekDataPromise = shareServies.fetchWeeklyData('commercialBank');
-    const shareMonthlyDataPromise = shareServies.fetchMonthlyData(
-      'commercialBank'
-    );
-    const shareQuaterlyDataPromise = shareServies.fetchQuaterData(
-      'commercialBank'
-    );
-    const shareYearlyDataPromise = shareServies.fetchYearlyData(
-      'commercialBank'
-    );
+    this.setState({ loading: true });
+    const { category } = this.state;
+    const shareDailyDataPromise = shareServies.fetchDailyData(category);
+    const shareWeekDataPromise = shareServies.fetchWeeklyData(category);
+    const shareMonthlyDataPromise = shareServies.fetchMonthlyData(category);
+    const shareQuaterlyDataPromise = shareServies.fetchQuaterData(category);
+    const shareYearlyDataPromise = shareServies.fetchYearlyData(category);
 
     const [
       shareDailyData,
@@ -54,6 +56,7 @@ class App extends React.Component {
       shareMonthlyData,
       shareQuaterlyData,
       shareYearlyData,
+      loading: false,
     });
   };
 
@@ -67,6 +70,7 @@ class App extends React.Component {
       shareMonthlyData,
       shareQuaterlyData,
       shareYearlyData,
+      loading,
     } = this.state;
 
     return (
@@ -77,6 +81,8 @@ class App extends React.Component {
           shareMonthlyData={shareMonthlyData}
           shareQuaterlyData={shareQuaterlyData}
           shareYearlyData={shareYearlyData}
+          loading={loading}
+          onChangeCategory={this.onChangeCategory}
         />
       </div>
     );

@@ -9,7 +9,10 @@ import dateUtil from '../../utils/date';
 import { MAIN_GRAPH_HEIGHT } from '../../constants/graph';
 
 function WeeklyMainGraph(props) {
-  const final_data = props.shareWeekData.map((bankData) => {
+  const { shareWeekData, loading } = props;
+  const { onChangeCategory } = props;
+
+  const final_data = shareWeekData.map((bankData) => {
     const { symbol, time_list } = bankData;
 
     const time_line_data = time_list.map(({ time, value }) => {
@@ -31,7 +34,7 @@ function WeeklyMainGraph(props) {
       <NavBar />
       <div className="row">
         <div className="col-sm-2">
-          <SideBar />
+          <SideBar onNavItemClick={onChangeCategory} />
         </div>
         <div className="col-sm-10">
           <LineChart datasets={final_data} height={MAIN_GRAPH_HEIGHT} />

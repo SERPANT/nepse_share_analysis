@@ -30,7 +30,7 @@ class ShareSpiderSpider(scrapy.Spider):
         share_info = START_URL[arguments["category"]]
 
         custom_settings = {
-            'FEED_URI' : share_info.file_locaion[arguments['time_val']],
+            'FEED_URI' : share_info.file_location[arguments['time_val']],
             'FEED_FORMAT' : "json"
             }
 

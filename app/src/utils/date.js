@@ -2,11 +2,7 @@ export const getOnlyDate = (dateString) => {
   const dateObj = new Date(dateString);
 
   return (
-    dateObj.getFullYear() +
-    '-' +
-    (dateObj.getMonth() + 1) +
-    '-' +
-    dateObj.getDate()
+    dateObj.getYear() + '-' + (dateObj.getMonth() + 1) + '-' + dateObj.getDate()
   );
 };
 

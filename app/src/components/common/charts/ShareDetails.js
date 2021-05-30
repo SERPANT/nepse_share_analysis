@@ -21,17 +21,17 @@ function ShareDetails(props) {
         <li className="list-group-item">
           <strong>Value at End: {valueAtTheEnd.y}</strong>
         </li>
+        <li className="list-group-item">
+          <strong>Largetest Change: {largestValue.y - smallestValue.y}</strong>
+        </li>
+        <li className="list-group-item">
+          <strong>Percentage Value: {percentageChange} %</strong>
+        </li>
 
         <li className="list-group-item">
           <strong>
             Price Change Value: {valueAtTheEnd.y - valueAtTheStart.y}
           </strong>
-        </li>
-        <li className="list-group-item">
-          <strong>Max Diff: {largestValue.y - smallestValue.y}</strong>
-        </li>
-        <li className="list-group-item">
-          <strong>Percentage Value: {percentageChange} %</strong>
         </li>
       </ul>
     </div>

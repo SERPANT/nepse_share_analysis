@@ -1,0 +1,6 @@
+[
+{"symbol": "CORBL", "time_form": "W", "share_name": "Corporate Development Bank Limited", "time_list": [{"time": "2021-05-23 05:45:00", "value": 742.0}, {"time": "2021-05-24 05:45:00", "value": 750.0}, {"time": "2021-05-25 05:45:00", "value": 750.0}, {"time": "2021-05-27 05:45:00", "value": 742.0}]},
+{"symbol": "GBBL", "time_form": "W", "share_name": "Garima Bikas Bank Limited", "time_list": [{"time": "2021-05-23 05:45:00", "value": 406.0}, {"time": "2021-05-24 05:45:00", "value": 415.0}, {"time": "2021-05-25 05:45:00", "value": 406.0}, {"time": "2021-05-27 05:45:00", "value": 430.0}]},
+{"symbol": "EDBL", "time_form": "W", "share_name": "Excel Development Bank Ltd", "time_list": [{"time": "2021-05-23 05:45:00", "value": 671.0}, {"time": "2021-05-24 05:45:00", "value": 641.0}, {"time": "2021-05-25 05:45:00", "value": 627.0}, {"time": "2021-05-27 05:45:00", "value": 637.0}]},
+{"symbol": "GRDBL", "time_form": "W", "share_name": "Green Development Bank Ltd", "time_list": [{"time": "2021-05-23 05:45:00", "value": 275.0}, {"time": "2021-05-24 05:45:00", "value": 301.0}, {"time": "2021-05-25 05:45:00", "value": 303.0}, {"time": "2021-05-27 05:45:00", "value": 317.0}]}
+]

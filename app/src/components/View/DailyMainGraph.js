@@ -10,7 +10,10 @@ import { MAIN_GRAPH_HEIGHT } from '../../constants/graph';
 
 // import LineChart from
 function DailyMainGraph(props) {
-  const final_data = props.shareDailyData.map((bankData) => {
+  const { shareDailyData, loading } = props;
+  const { onChangeCategory } = props;
+
+  const final_data = shareDailyData.map((bankData) => {
     const { symbol, time_list } = bankData;
 
     const time_line_data = time_list.map(({ time, value }) => {
@@ -32,7 +35,7 @@ function DailyMainGraph(props) {
       <NavBar />
       <div className="row">
         <div className="col-sm-2">
-          <SideBar />
+          <SideBar onNavItemClick={onChangeCategory} />
         </div>
         <div className="col-sm-10">
           <LineChart datasets={final_data} height={MAIN_GRAPH_HEIGHT} />

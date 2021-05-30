@@ -1,0 +1,3 @@
+* use a database to store share key and value
+* use a database to store data of all quaterly and yearly data
+* impement pagination. Request to the api should fetch 3 data at a time. until a limit of all is reacted repeat
