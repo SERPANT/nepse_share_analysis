@@ -6,5 +6,7 @@ DATA_FOLDER_NAME = {
     "hydropower": "hydropower",
     "hotel": "hotel",
     "lifeinsurance": "lifeinsurance",
-    "nonlifeinstitution": "nonlifeinstitution"
+    "nonlifeinstitution": "nonlifeinstitution",
+    "trading": "trading",
+    "manufacturing": "manufacturing"
 }

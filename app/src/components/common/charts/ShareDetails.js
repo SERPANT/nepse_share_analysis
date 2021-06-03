@@ -22,7 +22,7 @@ function ShareDetails(props) {
           <strong>Value at End: {valueAtTheEnd.y}</strong>
         </li>
         <li className="list-group-item">
-          <strong>Largetest Change: {largestValue.y - smallestValue.y}</strong>
+          <strong>Largetst Change: {largestValue.y - smallestValue.y}</strong>
         </li>
         <li className="list-group-item">
           <strong>Percentage Value: {percentageChange} %</strong>

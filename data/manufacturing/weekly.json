@@ -1,0 +1,7 @@
+[
+{"symbol": "BNT", "time_form": "W", "share_name": "Bottlers Nepal (Terai) Limited", "time_list": [{"time": "2021-05-23 05:45:00", "value": 11140.0}, {"time": "2021-05-24 05:45:00", "value": 10801.0}, {"time": "2021-05-25 05:45:00", "value": 10890.0}, {"time": "2021-05-27 05:45:00", "value": 11100.0}]},
+{"symbol": "UNL", "time_form": "W", "share_name": "Unilever Nepal Limited", "time_list": [{"time": "2021-05-23 05:45:00", "value": 20150.0}, {"time": "2021-05-24 05:45:00", "value": 20150.0}, {"time": "2021-05-25 05:45:00", "value": 20000.0}, {"time": "2021-05-27 05:45:00", "value": 20000.0}]},
+{"symbol": "NLO", "time_form": "W", "share_name": "Nepal Lube Oil Limited", "time_list": [{"time": "2021-05-23 05:45:00", "value": 301.0}]},
+{"symbol": "SHIVM", "time_form": "W", "share_name": "SHIVAM CEMENTS LTD", "time_list": [{"time": "2021-05-23 05:45:00", "value": 1505.0}, {"time": "2021-05-24 05:45:00", "value": 1485.0}, {"time": "2021-05-25 05:45:00", "value": 1479.0}, {"time": "2021-05-27 05:45:00", "value": 1491.0}]},
+{"symbol": "HDL", "time_form": "W", "share_name": "Himalayan Distillery Limited", "time_list": [{"time": "2021-05-23 05:45:00", "value": 4514.0}, {"time": "2021-05-24 05:45:00", "value": 4529.0}, {"time": "2021-05-25 05:45:00", "value": 4500.0}, {"time": "2021-05-27 05:45:00", "value": 4501.0}]}
+]

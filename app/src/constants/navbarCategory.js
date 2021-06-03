@@ -6,8 +6,11 @@ const NAV_BAR_CATEGORIES = [
   { label: 'Life Insurance Companies', category: 'lifeinsurance' },
   { label: 'Non-Life Insurance Companies', category: 'nonlifeinstitution' },
   { label: 'Hydropower Companies', category: 'hydropower' },
-  { label: 'Manufacturing and Processing Companies', category: '' },
-  { label: 'Trading Companies', category: '' },
+  {
+    label: 'Manufacturing and Processing Companies',
+    category: 'manufacturing',
+  },
+  { label: 'Trading Companies', category: 'trading' },
   { label: 'Hotel Lists ', category: 'hotel' },
 ];
 

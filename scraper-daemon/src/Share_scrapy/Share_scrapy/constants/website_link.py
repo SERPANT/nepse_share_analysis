@@ -197,7 +197,8 @@ START_URL = {
             {"name": "Ngadi Group Power Ltd.", "symbol": "NGPL", "value": 2743},
             {"name": "SANJEN JALAVIDHYUT COMPANY LIMITED", "symbol": "SJCL", "value": 2842},
             {"name": "RASUWAGADHI HYDROPOWER COMPANY LIMITED", "symbol": "RHPL", "value": 2841},
-            {"name": "United Modi Hydropower Ltd.", "symbol": "UMHL", "value": 2760}
+            {"name": "United Modi Hydropower Ltd.", "symbol": "UMHL", "value": 2760},
+            {"name": "Dibyashwori Hydropower Ltd.", "symbol": "DHPL", "value": 2754}
         ]
     }),
     "LifeInsurance": Box({
@@ -248,6 +249,37 @@ START_URL = {
             {"name": "AJOD Insurance Limited", "symbol": "AIL", "value":2893 },
             {"name": "Sanima General Insurance Company Limited", "symbol": "SGI", "value":2908 },
             {"name": "General Insurance Company Limited", "symbol": "GIC", "value": 2905}
+        ]
+    }),
+    "Trading": Box({
+        "file_location": {
+            "W":"../../../../../data/trading/weekly.json",
+            "M": "../../../../../data/trading/monthly.json",
+            "Y": "../../../../../data/trading/yearly.json",
+            "Q": "../../../../../data/trading/quaterly.json",
+            "D": "../../../../../data/trading/daily.json"
+        },
+        "links": [
+            {"name": "Bishal Bazar Company Limited", "symbol": "BBC", "value": 156},
+            {"name": "Salt Trading Corporation", "symbol": "STC", "value": 155}
+        ]
+    }),
+    "Manufacturing": Box({
+        "file_location": {
+            "W":"../../../../../data/manufacturing/weekly.json",
+            "M": "../../../../../data/manufacturing/monthly.json",
+            "Y": "../../../../../data/manufacturing/yearly.json",
+            "Q": "../../../../../data/manufacturing/quaterly.json",
+            "D": "../../../../../data/manufacturing/daily.json"
+        },
+        "links": [
+            {"name": "Bottlers Nepal (Balaju) Limited", "symbol": "BNL", "value": 195},
+            {"name": "Bottlers Nepal (Terai) Limited", "symbol": "BNT", "value": 213},
+            {"name": "Himalayan Distillery Limited", "symbol": "HDL", "value": 235},
+            {"name": "Nepal Lube Oil Limited", "symbol": "NLO", "value": 198 },
+            {"name": "Shree Raghupati Jute Mills Limited", "symbol": "RJM", "value": 203},
+            {"name": "Unilever Nepal Limited", "symbol": "UNL", "value": 219},
+            {"name": "SHIVAM CEMENTS LTD", "symbol": "SHIVM", "value": 2809},
         ]
     })
 
