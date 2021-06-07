@@ -1,4 +1,5 @@
 import scrapy
+from datetime import date
 
 from Share_scrapy.items import Share_Basic_Info
 
@@ -76,7 +77,7 @@ class MerolaganiScrapperSpider(scrapy.Spider):
         share_info_obj["right_share"] = dic["Right Share"]
         share_info_obj["right_share_value"] = dic["Right Share"].split("(")[0]
         share_info_obj["thirty_day_average_volume"] = dic["30-Day Avg Volume"]
-
+        share_info_obj["recorded_date"] = date.today()
 
         return share_info_obj
 
