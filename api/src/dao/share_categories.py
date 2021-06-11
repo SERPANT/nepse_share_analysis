@@ -10,14 +10,19 @@ def fetch_all():
     except Exception:
         print('Fetching share category failed')
 
+
+
 def fetch_all_with_share():
     try:
         session = db.create_session()
 
         sub_query_join_share_share_basic_info = session.query(Share).join(Share_Basic_Info, Share.symbol == Share_Basic_Info.share_symbol).subquery()
 
+        print('ppppppppppppp   ', sub_query_join_share_share_basic_info)
+
         return session.query(Share_Category).join(sub_query_join_share_share_basic_info).all()
 
     except Exception:
+        raise
         print('Fetching share category failed')
         

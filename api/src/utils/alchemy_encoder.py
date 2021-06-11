@@ -3,10 +3,19 @@ from sqlalchemy.ext.declarative import DeclarativeMeta
 from sqlalchemy.orm.collections import InstrumentedList
 
 
-class AlchemyEncoder(json.JSONEncoder):    
+class AlchemyEncoder(json.JSONEncoder): 
 
     @staticmethod
-    def parse_obj_to_json(obj):
+    def convert_model_list_to_dic(listObj):
+        new_list = []
+
+        for obj in listObj:
+            new_list.append(AlchemyEncoder.convert_model_obj_to_dict(obj))
+
+        return new_list
+
+    @staticmethod
+    def convert_model_obj_to_dict(obj):
         if isinstance(obj.__class__, DeclarativeMeta):
             # an SQLAlchemy class
             fields = {}
@@ -14,6 +23,7 @@ class AlchemyEncoder(json.JSONEncoder):
                 data = obj.__getattribute__(field)
 
                 if type(data) == InstrumentedList and  len(data) == 0:
+                    fields[field] = []
                     continue
 
                 new_data = None
@@ -21,7 +31,7 @@ class AlchemyEncoder(json.JSONEncoder):
                 if type(data) == InstrumentedList:
                     instrument_list = []
                     for item in data:
-                        instrument_list.append(AlchemyEncoder.parse_obj_to_json(item))
+                        instrument_list.append(AlchemyEncoder.convert_model_obj_to_dict(item))
                     
                     new_data = instrument_list
                 else:
@@ -35,18 +45,23 @@ class AlchemyEncoder(json.JSONEncoder):
             # a json-encodable dict
             return fields
 
+
     @staticmethod
-    def parse_list_to_json(listObj):
-        new_list = []
-        for obj in listObj:
-            new_list.append(AlchemyEncoder.parse_obj_to_json(obj))
+    def parse_model_obj_to_json(obj):
+        dic_obj = AlchemyEncoder.convert_model_obj_to_dict(obj)
+
+        return json.dumps(dic_obj)
+
+    @staticmethod
+    def parse_model_list_to_json(listObj):
+        new_list = AlchemyEncoder.convert_model_list_to_dic(listObj)
 
         return json.dumps(new_list)
     
     @staticmethod
-    def parse_to_json(obj):
+    def parse_model_to_json(obj):
         # starting function
         if(type(obj) == list):
-            return AlchemyEncoder.parse_list_to_json(obj)
+            return AlchemyEncoder.parse_model_list_to_json(obj)
         
-        return AlchemyEncoder.parse_obj_to_json(obj)
+        return AlchemyEncoder.parse_model_obj_to_json(obj)

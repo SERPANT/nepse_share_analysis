@@ -16,6 +16,6 @@ def fetch_all():
     print("-------------------------------   ", data)
     response = Response()
     response.headers["Content-Type"] = "application/json"
-    response.data = AlchemyEncoder.parse_to_json([data[0]])
+    response.data = AlchemyEncoder.parse_model_to_json(data)
     
     return response

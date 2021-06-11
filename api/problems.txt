@@ -1,0 +1,2 @@
+* Category are not all fetched
+* more than one share basic info
