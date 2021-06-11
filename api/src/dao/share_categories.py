@@ -3,6 +3,10 @@ from models.share import Share
 from models.share_basic_info import Share_Basic_Info
 from models.share_categories import Share_Category
 
+from sqlalchemy.orm import joinedload, subqueryload
+
+from sqlalchemy.sql import func
+
 def fetch_all():
     try:
         session = db.create_session()
@@ -16,13 +20,10 @@ def fetch_all_with_share():
     try:
         session = db.create_session()
 
-        sub_query_join_share_share_basic_info = session.query(Share).join(Share_Basic_Info, Share.symbol == Share_Basic_Info.share_symbol).subquery()
-
-        print('ppppppppppppp   ', sub_query_join_share_share_basic_info)
-
-        return session.query(Share_Category).join(sub_query_join_share_share_basic_info).all()
+        filter_share_basic = session.query(func.max(Share_Basic_Info.id)).group_by(Share_Basic_Info.share_symbol).subquery()
+        
+        return session.query(Share_Category).options(joinedload(Share_Category.share).joinedload(Share.share_basic_info.and_(Share_Basic_Info.id.in_(filter_share_basic)))).all()
 
     except Exception:
-        raise
         print('Fetching share category failed')
         

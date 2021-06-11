@@ -45,7 +45,6 @@ class AlchemyEncoder(json.JSONEncoder):
             # a json-encodable dict
             return fields
 
-
     @staticmethod
     def parse_model_obj_to_json(obj):
         dic_obj = AlchemyEncoder.convert_model_obj_to_dict(obj)
