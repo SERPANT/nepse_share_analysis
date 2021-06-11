@@ -13,6 +13,7 @@ share_category_route = Blueprint('share_category', __name__, url_prefix=ROUTES.S
 def fetch_all():
     data = share_categories_services.fetch_all_with_share()
     
+    print("-------------------------------   ", data)
     response = Response()
     response.headers["Content-Type"] = "application/json"
     response.data = AlchemyEncoder.parse_to_json([data[0]])
