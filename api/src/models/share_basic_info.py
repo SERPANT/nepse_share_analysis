@@ -9,13 +9,13 @@ class Share_Basic_Info(Base):
 
     id = Column(Integer, primary_key = True)
 
-    market_price = Column(Numeric(precision = 2, asdecimal=True))
-    percentage_change = Column(Float)
-    fifty_two_weeks_low = Column(Numeric(precision = 2, asdecimal=True))
-    fifty_two_weeks_high = Column(Numeric(precision = 2, asdecimal=True))
-    hundred_eighty_average = Column(Numeric(precision = 2, asdecimal=True))
-    hundred_twenty_average = Column(Numeric(precision = 2, asdecimal=True))
-    thirty_day_average_volume = Column(String(50))
+    # market_price = Column(Numeric(precision = 2, asdecimal=True))
+    # percentage_change = Column(Float)
+    # fifty_two_weeks_low = Column(Numeric(precision = 2, asdecimal=True))
+    # fifty_two_weeks_high = Column(Numeric(precision = 2, asdecimal=True))
+    # hundred_eighty_average = Column(Numeric(precision = 2, asdecimal=True))
+    # hundred_twenty_average = Column(Numeric(precision = 2, asdecimal=True))
+    # thirty_day_average_volume = Column(String(50))
     
     share_outstanding = Column(String(20))
     one_year_yield = Column(Float)
@@ -33,4 +33,5 @@ class Share_Basic_Info(Base):
     record_date =  Column(Time(timezone = False), nullable = False)
 
     share_symbol = Column(String(10), ForeignKey('share.symbol'), nullable = False)
-    share = relationship("share", back_populates="share_basic_info")
+    
+    share = relationship("Share", back_populates="share_basic_info")

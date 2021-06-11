@@ -9,10 +9,8 @@ class Share(Base):
     name = Column(String(150), nullable = False)
     symbol = Column(String(10), primary_key = True,  unique=True, nullable = False)
 
-    share = relationship("share_basic_info", back_populates="share")
-
     share_category_id = Column(Integer, ForeignKey('share_category.id'), nullable = False)  
 
-    share_category = relationship("share_category", back_populates="share")  
-
-    moving_averages = relationship("moving_average", back_populates = "share")
+    share_basic_info = relationship("Share_Basic_Info", back_populates="share")
+    share_category = relationship("Share_Category", back_populates="share")  
+    moving_average_values = relationship("Moving_Average_Value", back_populates = "share")

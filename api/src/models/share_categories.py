@@ -9,4 +9,4 @@ class Share_Category(Base):
     name = Column(String(15), nullable = False)
     id = Column(Integer, primary_key = True, autoincrement = True)
 
-    share = relationship("share", back_populates = "share_category")
+    share = relationship("Share", back_populates = "share_category")
