@@ -1,11 +1,11 @@
 from db import db
+
 from models.share import Share
 from models.share_basic_info import Share_Basic_Info
 from models.share_categories import Share_Category
 
-from sqlalchemy.orm import joinedload, subqueryload
-
 from sqlalchemy.sql import func
+from sqlalchemy.orm import joinedload
 
 def fetch_all():
     try:

@@ -1,11 +1,10 @@
-from flask import Blueprint,Response
+import json
+from flask import Blueprint, Response
 
 from constants.routes import ROUTES
 import services.share_categories as share_categories_services
 
 from utils.alchemy_encoder import AlchemyEncoder
-
-import json
 
 share_category_route = Blueprint('share_category', __name__, url_prefix=ROUTES.SHARE_CATEGORY)
 
