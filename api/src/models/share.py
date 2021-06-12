@@ -14,3 +14,4 @@ class Share(Base):
     share_basic_info = relationship("Share_Basic_Info", back_populates="share")
     share_category = relationship("Share_Category", back_populates="share")  
     moving_average_values = relationship("Moving_Average_Value", back_populates = "share")
+    share_prices = relationship("Share_Price", back_populates = "share")

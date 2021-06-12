@@ -26,4 +26,14 @@ def fetch_all_with_share():
 
     except Exception:
         print('Fetching share category failed')
+
+
+def create(share_category):
+    session = db.session_maker()
+    try:
+        session.add(share_category)
+        session.commit()
+    except:
+        print('failed to create share category')
+
         

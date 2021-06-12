@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Numeric, Float, ForeignKey, Time
+from sqlalchemy import Column, Integer, String, Numeric, Float, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
 
 from .base_model import Base
@@ -30,7 +30,7 @@ class Share_Basic_Info(Base):
     percentage_bonus_value = Column(Float)
     right_share = Column(String(50))
     right_share_value  = Column(String(10))
-    record_date =  Column(Time(timezone = False), nullable = False)
+    record_date =  Column(DateTime(timezone = False), nullable = False)
 
     share_symbol = Column(String(10), ForeignKey('share.symbol'), nullable = False)
     

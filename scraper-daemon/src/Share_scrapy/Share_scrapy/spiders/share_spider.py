@@ -31,7 +31,10 @@ class ShareSpiderSpider(scrapy.Spider):
 
         custom_settings = {
             'FEED_URI' : share_info.file_location[arguments['time_val']],
-            'FEED_FORMAT' : "json"
+            'FEED_FORMAT' : "json",
+            'ITEM_PIPELINES': {
+                'Share_scrapy.pipelines.DuplicatePipeLine': 300
+                }
             }
 
         settings.setdict(custom_settings, priority='spider')

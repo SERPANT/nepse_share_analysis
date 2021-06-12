@@ -8,3 +8,4 @@ class Share_Sangsar_Share_Scrapper(scrapy.Spider):
     start_urls = MOVING_AVERAGE_LINKS["CommercialBankShare"]
 
     def parse(self, response):
+        pass

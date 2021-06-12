@@ -1,6 +1,9 @@
 import json
+import datetime
 from sqlalchemy.ext.declarative import DeclarativeMeta
 from sqlalchemy.orm.collections import InstrumentedList
+from decimal import Decimal
+import simplejson
 
 
 class AlchemyEncoder(json.JSONEncoder): 
@@ -36,6 +39,14 @@ class AlchemyEncoder(json.JSONEncoder):
                     new_data = instrument_list
                 else:
                     new_data = data
+
+                if isinstance(new_data, datetime.date):
+                    fields[field] = new_data.strftime("%Y-%m-%d %H:%M:%S")
+                    continue
+
+                if isinstance(new_data, Decimal):
+                    fields[field] = simplejson.dumps(new_data, use_decimal=True)
+                    continue
 
                 try:
                     json.dumps(new_data) # this will fail on non-encodable values, like other classes
