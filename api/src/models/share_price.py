@@ -7,7 +7,7 @@ class Share_Price(Base):
     __tablename__ = 'share_price'
 
     id = Column(Integer, primary_key=True)
-    price = Column(Numeric(precision = 2, asdecimal=True), nullable = False)
+    price = Column(Numeric(precision = 10, scale = 4, asdecimal=True), nullable = False)
     date_time = Column(DateTime(timezone = False), nullable = False)
 
     share_symbol = Column(String(10), ForeignKey('share.symbol'), nullable = False)

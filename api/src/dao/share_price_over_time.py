@@ -23,5 +23,6 @@ def create(share_price_obj):
         session.add(share_price_obj)
         session.commit()
     except:
+        raise
         print('creating share price object failed')
 

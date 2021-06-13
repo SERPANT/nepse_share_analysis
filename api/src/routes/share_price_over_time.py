@@ -53,11 +53,14 @@ def insert_data():
     if data == None:
         raise "No data"
 
-    date_time = datetime.strptime(data["time"], '%Y-%m-%d %H:%M:%S')
+    share_symbol = data["symbol"]
+    share_prices = data["time_list"]
 
-    share_price_obj = Share_Price(price = Decimal(data["price"]), date_time = date_time, share_symbol= data["shareSymbol"])
+    for share_price in share_prices:
+        date_time = datetime.strptime(share_price["time"], '%Y-%m-%d %H:%M:%S')
 
-    share_price_over_time_services.create(share_price_obj)
+        share_price_obj = Share_Price(price = Decimal(share_price["value"]), date_time = date_time, share_symbol = share_symbol)
+
+        share_price_over_time_services.create(share_price_obj)
 
     return Response(status = 201, mimetype='application/json')
-

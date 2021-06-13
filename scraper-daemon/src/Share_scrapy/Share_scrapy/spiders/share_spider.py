@@ -33,7 +33,8 @@ class ShareSpiderSpider(scrapy.Spider):
             'FEED_URI' : share_info.file_location[arguments['time_val']],
             'FEED_FORMAT' : "json",
             'ITEM_PIPELINES': {
-                'Share_scrapy.pipelines.DuplicatePipeLine': 300
+                'Share_scrapy.pipelines.DuplicatePipeLine': 300,
+                'Share_scrapy.pipelines.Save_Share_Price_To_Data_Base': 500
                 }
             }
 
@@ -56,8 +57,8 @@ class ShareSpiderSpider(scrapy.Spider):
         
         nepse_share_time_obj = NEPSE_share_time_obj()
         nepse_share_time_obj["symbol"] = company_obj["symbol"]
-        nepse_share_time_obj["time_form"] = time_form
-        nepse_share_time_obj["share_name"] = company_obj["name"]
+        #nepse_share_time_obj["time_form"] = time_form
+        #nepse_share_time_obj["share_name"] = company_obj["name"]
             
         time_list = []
 
@@ -70,4 +71,5 @@ class ShareSpiderSpider(scrapy.Spider):
         
         nepse_share_time_obj["time_list"] = time_list
 
+        print(nepse_share_time_obj)
         return nepse_share_time_obj

@@ -21,10 +21,11 @@ def fetch_all_with_share():
         session = db.create_session()
 
         filter_share_basic = session.query(func.max(Share_Basic_Info.id)).group_by(Share_Basic_Info.share_symbol).subquery()
-        
+
         return session.query(Share_Category).options(joinedload(Share_Category.share).joinedload(Share.share_basic_info.and_(Share_Basic_Info.id.in_(filter_share_basic)))).all()
 
     except Exception:
+        raise
         print('Fetching share category failed')
 
 

@@ -6,7 +6,9 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
+from scrapy.utils.serialize import ScrapyJSONEncoder
 
+import Share_scrapy.services.share as share_services
 
 class ShareScrapyPipeline:
     def process_item(self, item, spider):
@@ -39,3 +41,12 @@ class DuplicatePipeLine:
 
         self.time_seen.clear()
         return item
+
+class Save_Share_Price_To_Data_Base:
+     def process_item(self, item, spider):
+         _encoder = ScrapyJSONEncoder()
+         json_encoded_item = _encoder.encode(item)
+
+         share_services.store_share_data(json_encoded_item)
+
+         return item

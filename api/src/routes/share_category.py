@@ -15,7 +15,7 @@ def fetch_all():
     
     response = Response()
     response.headers["Content-Type"] = "application/json"
-    response.data = AlchemyEncoder.parse_model_to_json(data)
+    response.data = AlchemyEncoder.parse_model_to_json(data, ['share_prices'])
     
     return response
 
@@ -25,9 +25,9 @@ def create():
     if data == None:
         raise "No data"
     
-    share_category_obj= Share_Category(name = data["name"])
-
-    share_categories_services.create(share_category_obj)
+    for share_category in data: 
+        share_category_obj= Share_Category(name = share_category["name"])
+        share_categories_services.create(share_category_obj)
     
     response = Response(status = 201, mimetype='application/json')
 

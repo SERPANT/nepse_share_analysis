@@ -9,20 +9,25 @@ import simplejson
 class AlchemyEncoder(json.JSONEncoder): 
 
     @staticmethod
-    def convert_model_list_to_dic(listObj):
+    def convert_model_list_to_dic(listObj, ingore_field_list):
         new_list = []
 
         for obj in listObj:
-            new_list.append(AlchemyEncoder.convert_model_obj_to_dict(obj))
+            new_list.append(AlchemyEncoder.convert_model_obj_to_dict(obj, ingore_field_list))
 
         return new_list
 
     @staticmethod
-    def convert_model_obj_to_dict(obj):
+    def convert_model_obj_to_dict(obj, ingore_field_list):
         if isinstance(obj.__class__, DeclarativeMeta):
             # an SQLAlchemy class
             fields = {}
             for field in [x for x in dir(obj) if not x.startswith('_') and x != 'metadata']:
+
+
+                if field in ingore_field_list:
+                    continue
+
                 data = obj.__getattribute__(field)
 
                 if type(data) == InstrumentedList and  len(data) == 0:
@@ -34,7 +39,7 @@ class AlchemyEncoder(json.JSONEncoder):
                 if type(data) == InstrumentedList:
                     instrument_list = []
                     for item in data:
-                        instrument_list.append(AlchemyEncoder.convert_model_obj_to_dict(item))
+                        instrument_list.append(AlchemyEncoder.convert_model_obj_to_dict(item, ingore_field_list))
                     
                     new_data = instrument_list
                 else:
@@ -57,21 +62,21 @@ class AlchemyEncoder(json.JSONEncoder):
             return fields
 
     @staticmethod
-    def parse_model_obj_to_json(obj):
-        dic_obj = AlchemyEncoder.convert_model_obj_to_dict(obj)
+    def parse_model_obj_to_json(obj, ingore_field_list):
+        dic_obj = AlchemyEncoder.convert_model_obj_to_dict(obj, ingore_field_list)
 
         return json.dumps(dic_obj)
 
     @staticmethod
-    def parse_model_list_to_json(listObj):
-        new_list = AlchemyEncoder.convert_model_list_to_dic(listObj)
+    def parse_model_list_to_json(listObj, ingore_field_list):
+        new_list = AlchemyEncoder.convert_model_list_to_dic(listObj, ingore_field_list)
 
         return json.dumps(new_list)
     
     @staticmethod
-    def parse_model_to_json(obj):
+    def parse_model_to_json(obj, ingore_field_list = []):
         # starting function
         if(type(obj) == list):
-            return AlchemyEncoder.parse_model_list_to_json(obj)
+            return AlchemyEncoder.parse_model_list_to_json(obj, ingore_field_list)
         
-        return AlchemyEncoder.parse_model_obj_to_json(obj)
+        return AlchemyEncoder.parse_model_obj_to_json(obj, ingore_field_list)
