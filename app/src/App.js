@@ -85,17 +85,19 @@ class App extends React.Component {
   };
 
   test = async (selectedCategory, func, arrayName) => {
-    const sharePromises = selectedCategory.share.map(({ symbol, name }) => {
-      return func(symbol, name);
-    });
-
-    const data = await Promise.all(sharePromises);
-
-    this.setState({
-      [arrayName]: {
-        ...this.state[arrayName],
-        [selectedCategory.name]: data,
-      },
+    selectedCategory.share.forEach(({ symbol, name }) => {
+      func(symbol, name).then((data) => {
+        this.setState({
+          [arrayName]: {
+            ...this.state[arrayName],
+            [selectedCategory.name]: !this.state[arrayName][
+              selectedCategory.name
+            ]
+              ? [data]
+              : [...this.state[arrayName][selectedCategory.name], data],
+          },
+        });
+      });
     });
   };
 
