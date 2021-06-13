@@ -11,6 +11,7 @@ class Share_Basic_Info(Base):
 
     # market_price = Column(Numeric(precision = 2, asdecimal=True))
     # percentage_change = Column(Float)
+    
     # fifty_two_weeks_low = Column(Numeric(precision = 2, asdecimal=True))
     # fifty_two_weeks_high = Column(Numeric(precision = 2, asdecimal=True))
     # hundred_eighty_average = Column(Numeric(precision = 2, asdecimal=True))
