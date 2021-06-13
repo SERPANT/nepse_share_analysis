@@ -10,6 +10,8 @@ import 'react-pro-sidebar/dist/css/styles.css';
 import NAV_BAR_CATEGORIES from '../../../constants/navbarCategory';
 
 const SideBar = (props) => {
+  const { shareCategories } = props;
+
   return (
     <ProSidebar>
       <SidebarHeader>
@@ -18,16 +20,16 @@ const SideBar = (props) => {
         </div>
       </SidebarHeader>
       <Menu iconShape="square">
-        {NAV_BAR_CATEGORIES.map(({ label, category }) => (
+        {shareCategories.map(({ name, id }) => (
           <MenuItem
-            key={category}
+            key={id}
             onClick={() => {
-              props.onNavItemClick(category);
+              props.onNavItemClick(id);
             }}
-            value={category}
-            id={category}
+            value={id}
+            id={id}
           >
-            {label}
+            {name}
           </MenuItem>
         ))}
         <SubMenu title="Components">

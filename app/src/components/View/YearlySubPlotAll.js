@@ -3,8 +3,10 @@ import NavBar from '../common/navbar/NavBar';
 import SideBar from '../common/sidebar/sidebar';
 import ChartMapperLine from '../common/charts/ChartMapperLine';
 
+import TIME_INTERVAL_TYPE from '../../constants/timeIntervalType';
+
 function YearlySubPlotAll(props) {
-  const { shareYearlyData, loading } = props;
+  const { shareYearlyData, loading, shareCategories } = props;
   const { onChangeCategory } = props;
 
   return (
@@ -14,7 +16,10 @@ function YearlySubPlotAll(props) {
 
       <div className="row">
         <div className="col-sm-2">
-          <SideBar onNavItemClick={onChangeCategory} />
+          <SideBar
+            onNavItemClick={onChangeCategory}
+            shareCategories={shareCategories}
+          />
         </div>
         <div className="col-sm-10">
           {loading && (
@@ -23,7 +28,12 @@ function YearlySubPlotAll(props) {
             </div>
           )}
           {!loading && (
-            <ChartMapperLine shareData={shareYearlyData} dateOnly={true} />
+            <ChartMapperLine
+              shareData={shareYearlyData}
+              dateOnly={true}
+              timeIntervalType={TIME_INTERVAL_TYPE.YEARLY}
+              fetchSharePriceData={props.fetchSharePriceData}
+            />
           )}
         </div>
       </div>

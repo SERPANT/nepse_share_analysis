@@ -8,40 +8,63 @@ import SideBar from '../common/sidebar/sidebar';
 import dateUtil from '../../utils/date';
 import { MAIN_GRAPH_HEIGHT } from '../../constants/graph';
 
-function MonthlyMainGraph(props) {
-  const { shareMonthlyData, loading } = props;
-  const { onChangeCategory } = props;
+import TIME_INTERVAL_TYPE from '../../constants/timeIntervalType';
 
-  const final_data = shareMonthlyData.map((bankData) => {
-    const { symbol, time_list } = bankData;
+class MonthlyMainGraph extends React.Component {
+  componentDidMount = () => {
+    this.fetchMonthlyData();
+  };
 
-    const time_line_data = time_list.map(({ time, value }) => {
+  componentDidUpdate = () => {
+    this.fetchMonthlyData();
+  };
+
+  fetchMonthlyData = () => {
+    const { shareMonthlyData } = this.props;
+
+    if (shareMonthlyData.length > 0) return;
+
+    this.props.fetchSharePriceData(TIME_INTERVAL_TYPE.MONTHLY);
+  };
+
+  render() {
+    const { shareMonthlyData, loading, shareCategories } = this.props;
+    const { onChangeCategory } = this.props;
+
+    const final_data = shareMonthlyData.map((bankData) => {
+      const { share, timeList } = bankData;
+
+      const time_line_data = timeList.map(({ date_time, price }) => {
+        return {
+          x: dateUtil.getOnlyDate(date_time),
+          y: price,
+        };
+      });
+
       return {
-        x: dateUtil.getOnlyDate(time),
-        y: value,
+        label: share,
+        data: time_line_data,
       };
     });
 
-    return {
-      label: symbol,
-      data: time_line_data,
-    };
-  });
-
-  return (
-    <div>
-      <Header />
-      <NavBar />
-      <div className="row">
-        <div className="col-sm-2">
-          <SideBar onNavItemClick={onChangeCategory} />
-        </div>
-        <div className="col-sm-10">
-          <LineChart datasets={final_data} height={MAIN_GRAPH_HEIGHT} />
+    return (
+      <div>
+        <Header />
+        <NavBar />
+        <div className="row">
+          <div className="col-sm-2">
+            <SideBar
+              onNavItemClick={onChangeCategory}
+              shareCategories={shareCategories}
+            />
+          </div>
+          <div className="col-sm-10">
+            <LineChart datasets={final_data} height={MAIN_GRAPH_HEIGHT} />
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default MonthlyMainGraph;

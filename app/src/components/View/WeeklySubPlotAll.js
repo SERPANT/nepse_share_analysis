@@ -3,8 +3,10 @@ import NavBar from '../common/navbar/NavBar';
 import SideBar from '../common/sidebar/sidebar';
 import ChartMapperLine from '../common/charts/ChartMapperLine';
 
+import TIME_INTERVAL_TYPE from '../../constants/timeIntervalType';
+
 function WeeklySubPlotAll(props) {
-  const { shareWeekData, loading } = props;
+  const { shareWeekData, loading, shareCategories } = props;
   const { onChangeCategory } = props;
 
   return (
@@ -13,10 +15,18 @@ function WeeklySubPlotAll(props) {
       <NavBar />
       <div className="row">
         <div className="col-sm-2">
-          <SideBar onNavItemClick={onChangeCategory} />
+          <SideBar
+            onNavItemClick={onChangeCategory}
+            shareCategories={shareCategories}
+          />
         </div>
         <div className="col-sm-10">
-          <ChartMapperLine shareData={shareWeekData} dateOnly={true} />
+          <ChartMapperLine
+            shareData={shareWeekData}
+            dateOnly={true}
+            timeIntervalType={TIME_INTERVAL_TYPE.WEEKLY}
+            fetchSharePriceData={props.fetchSharePriceData}
+          />
         </div>
       </div>
     </div>

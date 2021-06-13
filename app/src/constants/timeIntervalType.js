@@ -1,0 +1,9 @@
+const TIME_INTERVAL_TYPE = {
+  DAILY: 1,
+  WEEKLY: 2,
+  MONTHLY: 3,
+  QUATERLY: 4,
+  YEARLY: 5,
+};
+
+export default TIME_INTERVAL_TYPE;

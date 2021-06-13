@@ -8,32 +8,35 @@ export const fetchDailyData = async (category) => {
   return data;
 };
 
-export async function fetchWeeklyData(category) {
+export async function fetchWeeklyData(shareSymbol, name) {
   const { data } = await http.get(
-    `${CONFIG.END_POINTS.shareinfo}/weekly?category=${category}`
+    `${CONFIG.END_POINTS.shareinfo}/w?shareSymbol=${shareSymbol}&shareName=${name}`
   );
 
   return data;
 }
 
-export async function fetchMonthlyData(category) {
+export async function fetchMonthlyData(shareSymbol, name) {
   const { data } = await http.get(
-    `${CONFIG.END_POINTS.shareinfo}/monthly?category=${category}`
+    `${CONFIG.END_POINTS.shareinfo}/m?shareSymbol=${shareSymbol}&shareName=${name}`
   );
+
   return data;
 }
 
-export async function fetchQuaterData(category) {
+export async function fetchQuaterData(shareSymbol, name) {
   const { data } = await http.get(
-    `${CONFIG.END_POINTS.shareinfo}/quaterly?category=${category}`
+    `${CONFIG.END_POINTS.shareinfo}/q?shareSymbol=${shareSymbol}&shareName=${name}`
   );
+
   return data;
 }
 
-export async function fetchYearlyData(category) {
+export async function fetchYearlyData(shareSymbol, name) {
   const { data } = await http.get(
-    `${CONFIG.END_POINTS.shareinfo}/yearly?category=${category}`
+    `${CONFIG.END_POINTS.shareinfo}/y?shareSymbol=${shareSymbol}&shareName=${name}`
   );
+
   return data;
 }
 

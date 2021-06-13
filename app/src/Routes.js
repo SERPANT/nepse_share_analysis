@@ -23,6 +23,8 @@ const Routes = (props) => {
           path={ROUTES.DAILY_MAIN_GRAPH}
           render={() => (
             <DailyMainGraph
+              fetchSharePriceData={props.fetchSharePriceData}
+              shareCategories={props.shareCategories}
               shareDailyData={props.shareDailyData}
               onChangeCategory={props.onChangeCategory}
               loading={props.loading}
@@ -34,6 +36,8 @@ const Routes = (props) => {
           path={ROUTES.DAILY_SUB_PLOT_ALL}
           render={() => (
             <DailySubPlotAll
+              fetchSharePriceData={props.fetchSharePriceData}
+              shareCategories={props.shareCategories}
               shareDailyData={props.shareDailyData}
               onChangeCategory={props.onChangeCategory}
               loading={props.loading}
@@ -45,6 +49,8 @@ const Routes = (props) => {
           path={ROUTES.MONTHLY_SUB_PLOT_ALL}
           render={() => (
             <MonthlySubPlotAll
+              fetchSharePriceData={props.fetchSharePriceData}
+              shareCategories={props.shareCategories}
               shareMonthlyData={props.shareMonthlyData}
               onChangeCategory={props.onChangeCategory}
               loading={props.loading}
@@ -56,6 +62,8 @@ const Routes = (props) => {
           path={ROUTES.MONTHLY_MAIN_GRAPH}
           render={() => (
             <MonthlyMainGraph
+              fetchSharePriceData={props.fetchSharePriceData}
+              shareCategories={props.shareCategories}
               shareMonthlyData={props.shareMonthlyData}
               onChangeCategory={props.onChangeCategory}
               loading={props.loading}
@@ -67,6 +75,8 @@ const Routes = (props) => {
           path={ROUTES.WEEKLY_MAIN_GRAPH}
           render={() => (
             <WeeklyMainGraph
+              fetchSharePriceData={props.fetchSharePriceData}
+              shareCategories={props.shareCategories}
               shareWeekData={props.shareWeekData}
               onChangeCategory={props.onChangeCategory}
               loading={props.loading}
@@ -78,6 +88,8 @@ const Routes = (props) => {
           path={ROUTES.WEEKLY_SUB_PLOT_ALL}
           render={() => (
             <WeeklySubPlotAll
+              fetchSharePriceData={props.fetchSharePriceData}
+              shareCategories={props.shareCategories}
               shareWeekData={props.shareWeekData}
               onChangeCategory={props.onChangeCategory}
               loading={props.loading}
@@ -89,6 +101,8 @@ const Routes = (props) => {
           path={ROUTES.QUATERLY_SUB_PLOT_ALL}
           render={() => (
             <QuaterlySubPlotAll
+              fetchSharePriceData={props.fetchSharePriceData}
+              shareCategories={props.shareCategories}
               shareQuaterlyData={props.shareQuaterlyData}
               onChangeCategory={props.onChangeCategory}
               loading={props.loading}
@@ -100,6 +114,8 @@ const Routes = (props) => {
           path={ROUTES.QUATERLY_MAIN_GRAPH}
           render={() => (
             <QuaterlyMainGraph
+              fetchSharePriceData={props.fetchSharePriceData}
+              shareCategories={props.shareCategories}
               shareQuaterlyData={props.shareQuaterlyData}
               onChangeCategory={props.onChangeCategory}
               loading={props.loading}
@@ -111,6 +127,8 @@ const Routes = (props) => {
           path={ROUTES.YEARLY_SUB_PLOT_ALL}
           render={() => (
             <YearlySubPlotAll
+              fetchSharePriceData={props.fetchSharePriceData}
+              shareCategories={props.shareCategories}
               shareYearlyData={props.shareYearlyData}
               onChangeCategory={props.onChangeCategory}
               loading={props.loading}
@@ -122,6 +140,8 @@ const Routes = (props) => {
           path={ROUTES.YEARLY_MAIN_GRAPH}
           render={() => (
             <YearlyMainGraph
+              fetchSharePriceData={props.fetchSharePriceData}
+              shareCategories={props.shareCategories}
               shareYearlyData={props.shareYearlyData}
               onChangeCategory={props.onChangeCategory}
               loading={props.loading}
@@ -132,6 +152,8 @@ const Routes = (props) => {
           path={ROUTES.HOME}
           render={() => (
             <DailyMainGraph
+              fetchSharePriceData={props.fetchSharePriceData}
+              shareCategories={props.shareCategories}
               shareDailyData={props.shareDailyData}
               onChangeCategory={props.onChangeCategory}
               loading={props.loading}

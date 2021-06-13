@@ -1,62 +1,113 @@
 import React from 'react';
 
-import * as shareServies from './services/shareService';
+import shareServices, * as shareServies from './services/shareService';
+import shareCategoryServices from './services/shareCategories';
 
 import Routes from './Routes';
+
+import TIME_INTERVAL_TYPE from './constants/timeIntervalType';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      shareDailyData: [],
-      shareWeekData: [],
-      shareMonthlyData: [],
-      shareQuaterlyData: [],
-      shareYearlyData: [],
-      category: 'commercialBank',
+      shareCategories: [],
+      shareDailyData: {},
+      shareWeekData: {},
+      shareMonthlyData: {},
+      shareQuaterlyData: {},
+      shareYearlyData: {},
+      selectedCategoryId: null,
       loading: false,
     };
   }
 
   componentDidMount = () => {
-    this.fetchShareData();
+    this.fetchCategory();
   };
 
-  onChangeCategory = (category) => {
-    this.setState({ category }, this.fetchShareData);
+  onChangeCategory = (categoryId) => {
+    this.setState({ selectedCategoryId: categoryId });
   };
 
-  fetchShareData = async () => {
-    this.setState({ loading: true });
-    const { category } = this.state;
-    const shareDailyDataPromise = shareServies.fetchDailyData(category);
-    const shareWeekDataPromise = shareServies.fetchWeeklyData(category);
-    const shareMonthlyDataPromise = shareServies.fetchMonthlyData(category);
-    const shareQuaterlyDataPromise = shareServies.fetchQuaterData(category);
-    const shareYearlyDataPromise = shareServies.fetchYearlyData(category);
+  fetchSharePriceData = async (timeIntervalType) => {
+    const { shareCategories, selectedCategoryId } = this.state;
 
-    const [
-      shareDailyData,
-      shareWeekData,
-      shareMonthlyData,
-      shareQuaterlyData,
-      shareYearlyData,
-    ] = await Promise.all([
-      shareDailyDataPromise,
-      shareWeekDataPromise,
-      shareMonthlyDataPromise,
-      shareQuaterlyDataPromise,
-      shareYearlyDataPromise,
-    ]);
+    const selectedCategory = shareCategories.find(
+      ({ id }) => id === selectedCategoryId
+    );
+
+    if (!selectedCategory) {
+      console.log('Error');
+      return;
+    }
+
+    if (timeIntervalType === TIME_INTERVAL_TYPE.DAILY) {
+      return this.test(
+        selectedCategory,
+        shareServices.fetchDailyData,
+        'shareDailyData'
+      );
+    }
+
+    if (timeIntervalType === TIME_INTERVAL_TYPE.WEEKLY) {
+      return this.test(
+        selectedCategory,
+        shareServices.fetchWeeklyData,
+        'shareWeekData'
+      );
+    }
+
+    if (timeIntervalType === TIME_INTERVAL_TYPE.MONTHLY) {
+      return this.test(
+        selectedCategory,
+        shareServices.fetchMonthlyData,
+        'shareMonthlyData'
+      );
+    }
+
+    if (timeIntervalType === TIME_INTERVAL_TYPE.QUATERLY) {
+      return this.test(
+        selectedCategory,
+        shareServices.fetchQuaterData,
+        'shareQuaterlyData'
+      );
+    }
+
+    if (timeIntervalType === TIME_INTERVAL_TYPE.YEARLY) {
+      return this.test(
+        selectedCategory,
+        shareServices.fetchYearlyData,
+        'shareYearlyData'
+      );
+    }
+  };
+
+  test = async (selectedCategory, func, arrayName) => {
+    const sharePromises = selectedCategory.share.map(({ symbol, name }) => {
+      return func(symbol, name);
+    });
+
+    const data = await Promise.all(sharePromises);
 
     this.setState({
-      shareDailyData,
-      shareWeekData,
-      shareMonthlyData,
-      shareQuaterlyData,
-      shareYearlyData,
+      [arrayName]: {
+        ...this.state[arrayName],
+        [selectedCategory.name]: data,
+      },
+    });
+  };
+
+  fetchCategory = async () => {
+    this.setState({ loading: true });
+
+    const shareCategories = await shareCategoryServices.fetch();
+
+    this.setState({
+      shareCategories,
       loading: false,
+      selectedCategoryId: shareCategories[0].id,
     });
   };
 
@@ -65,23 +116,45 @@ class App extends React.Component {
    */
   render() {
     const {
+      shareCategories,
       shareDailyData,
       shareWeekData,
+      selectedCategoryId,
       shareMonthlyData,
       shareQuaterlyData,
       shareYearlyData,
       loading,
     } = this.state;
 
+    const selectedCategory = shareCategories.find(
+      ({ id }) => id === selectedCategoryId
+    );
+
+    const dailyData = [];
+
+    const quaterlyData =
+      (selectedCategory && shareQuaterlyData[selectedCategory.name]) || [];
+
+    const weeklyData =
+      (selectedCategory && shareWeekData[selectedCategory.name]) || [];
+
+    const monthlyData =
+      (selectedCategory && shareMonthlyData[selectedCategory.name]) || [];
+
+    const yearlyData =
+      (selectedCategory && shareYearlyData[selectedCategory.name]) || [];
+
     return (
       <div className="container-fluid">
         <Routes
-          shareDailyData={shareDailyData}
-          shareWeekData={shareWeekData}
-          shareMonthlyData={shareMonthlyData}
-          shareQuaterlyData={shareQuaterlyData}
-          shareYearlyData={shareYearlyData}
+          shareCategories={shareCategories}
+          shareDailyData={dailyData}
+          shareWeekData={weeklyData}
+          shareMonthlyData={monthlyData}
+          shareQuaterlyData={quaterlyData}
+          shareYearlyData={yearlyData}
           loading={loading}
+          fetchSharePriceData={this.fetchSharePriceData}
           onChangeCategory={this.onChangeCategory}
         />
       </div>
