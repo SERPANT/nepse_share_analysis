@@ -39,7 +39,11 @@ const SideBar = (props) => {
         <MenuItem>
           <NavLink to={ROUTES.EPS_COMPARISIONS}>EPS Comparision chart</NavLink>
         </MenuItem>
-        <MenuItem>PE Ration Comparision chart</MenuItem>
+        <MenuItem>
+          <NavLink to={ROUTES.PE_COMPARISION}>
+            PE Ration Comparision chart
+          </NavLink>
+        </MenuItem>
       </Menu>
     </ProSidebar>
   );

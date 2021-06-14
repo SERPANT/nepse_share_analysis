@@ -6,7 +6,7 @@ import SideBar from '../common/sidebar/sidebar';
 
 import BarChart from '../common/charts/BarChart';
 
-function EPSComparision(props) {
+function PEComparision(props) {
   const { shareCategories, onChangeCategory } = props;
 
   if (!shareCategories || shareCategories.lengh <= 0) return null;
@@ -27,19 +27,19 @@ function EPSComparision(props) {
             const data = category.share.map((share) => {
               return {
                 x: share.symbol,
-                y: parseFloat(share.share_basic_info[0].eps_value),
+                y: parseFloat(share.share_basic_info[0].pe_ratio),
               };
             });
 
             return (
               <div className="card share-daily-card">
                 <div className="card-header">
-                  <h3>{category.name} EPS</h3>
+                  <h3>{category.name} PE</h3>
                 </div>
                 <div className="card-body">
                   <BarChart
                     key={category.id}
-                    datasets={[{ label: 'EPS value Comparision', data: data }]}
+                    datasets={[{ label: 'PE value Comparision', data: data }]}
                     height={500}
                   ></BarChart>
                 </div>
@@ -52,4 +52,4 @@ function EPSComparision(props) {
   );
 }
 
-export default EPSComparision;
+export default PEComparision;

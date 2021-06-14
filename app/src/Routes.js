@@ -9,6 +9,7 @@ import MonthlyMainGraph from './components/View/MonthlyMainGraph';
 import YearlyMainGraph from './components/View/YearlyMainGraph';
 import YearlySubPlotAll from './components/View/YearlySubPlotAll';
 import EPSComparision from './components/View/EPSComparision';
+import PEComparision from './components/View/PEComparision';
 
 import QuaterlyMainGraph from './components/View/QuaterlyMainGraphAll';
 import QuaterlySubPlotAll from './components/View/QuaterlySubPlotAll';
@@ -158,6 +159,15 @@ const Routes = (props) => {
           path={ROUTES.EPS_COMPARISIONS}
           render={() => (
             <EPSComparision
+              shareCategories={props.shareCategories}
+              onChangeCategory={props.onChangeCategory}
+            />
+          )}
+        />
+        <Route
+          path={ROUTES.PE_COMPARISION}
+          render={() => (
+            <PEComparision
               shareCategories={props.shareCategories}
               onChangeCategory={props.onChangeCategory}
             />
