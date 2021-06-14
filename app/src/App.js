@@ -146,7 +146,6 @@ class App extends React.Component {
     const yearlyData =
       (selectedCategory && shareYearlyData[selectedCategory.name]) || [];
 
-    console.log('===================== ', selectedCategory);
     return (
       <div className="container-fluid">
         <Routes

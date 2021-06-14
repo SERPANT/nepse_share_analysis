@@ -1,4 +1,5 @@
 const ROUTES = {
+  EPS_COMPARISIONS: '/epscomparision',
   DAILY_MAIN_GRAPH: '/dailymaingraph',
   DAILY_SUB_PLOT_ALL: '/dailysubplotall',
   MONTHLY_SUB_PLOT_ALL: '/monthlysubplotall',

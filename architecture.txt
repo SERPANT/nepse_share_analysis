@@ -5,3 +5,4 @@
 
 
 * plot 52 weeks high in graph
+* chart for 

@@ -102,7 +102,6 @@ function ShareDetails(props) {
       <table className="table table-dark">
         <tbody>
           {displayObj.map((data, index) => {
-            console.log((index + 1) % 3 === 0, index);
             if ((index + 1) % 3 === 0) {
               return (
                 <tr>

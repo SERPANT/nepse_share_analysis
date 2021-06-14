@@ -7,10 +7,12 @@ import {
 } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
 
-import NAV_BAR_CATEGORIES from '../../../constants/navbarCategory';
+import { NavLink } from 'react-router-dom';
+
+import ROUTES from '../../../constants/routes';
 
 const SideBar = (props) => {
-  const { shareCategories } = props;
+  const { shareCategories, onNavItemClick } = props;
 
   return (
     <ProSidebar>
@@ -20,22 +22,24 @@ const SideBar = (props) => {
         </div>
       </SidebarHeader>
       <Menu iconShape="square">
-        {shareCategories.map(({ name, id }) => (
-          <MenuItem
-            key={id}
-            onClick={() => {
-              props.onNavItemClick(id);
-            }}
-            value={id}
-            id={id}
-          >
-            {name}
-          </MenuItem>
-        ))}
-        <SubMenu title="Components">
-          <MenuItem>Component 1</MenuItem>
-          <MenuItem>Component 2</MenuItem>
+        <SubMenu title="Price Chart">
+          {shareCategories.map(({ name, id }) => (
+            <MenuItem
+              key={id}
+              onClick={() => {
+                onNavItemClick(id);
+              }}
+              value={id}
+              id={id}
+            >
+              {name}
+            </MenuItem>
+          ))}
         </SubMenu>
+        <MenuItem>
+          <NavLink to={ROUTES.EPS_COMPARISIONS}>EPS Comparision chart</NavLink>
+        </MenuItem>
+        <MenuItem>PE Ration Comparision chart</MenuItem>
       </Menu>
     </ProSidebar>
   );
