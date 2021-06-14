@@ -41,7 +41,7 @@ const SideBar = (props) => {
         </MenuItem>
         <MenuItem>
           <NavLink to={ROUTES.PE_COMPARISION}>
-            PE Ration Comparision chart
+            PE Ratio Comparision chart
           </NavLink>
         </MenuItem>
       </Menu>

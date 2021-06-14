@@ -41,6 +41,7 @@ function PEComparision(props) {
                     key={category.id}
                     datasets={[{ label: 'PE value Comparision', data: data }]}
                     height={500}
+                    backgroundColor="rgba(54, 162, 235, 0.6)"
                   ></BarChart>
                 </div>
               </div>

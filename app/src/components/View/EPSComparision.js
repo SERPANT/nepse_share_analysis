@@ -41,6 +41,7 @@ function EPSComparision(props) {
                     key={category.id}
                     datasets={[{ label: 'EPS value Comparision', data: data }]}
                     height={500}
+                    backgroundColor="rgba(255, 159, 64, 0.6))"
                   ></BarChart>
                 </div>
               </div>

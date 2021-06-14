@@ -4,7 +4,7 @@ import { Bar } from 'react-chartjs-2';
 
 class BarChart extends React.Component {
   render() {
-    const { datasets, height } = this.props;
+    const { datasets, height, backgroundColor } = this.props;
 
     const finalDatasets = datasets.map(({ data, label }) => {
       return {
@@ -17,7 +17,7 @@ class BarChart extends React.Component {
         tension: 0.1,
         label,
         fill: false,
-        backgroundColor: 'rgb(255, 99, 132)',
+        backgroundColor,
       };
     });
 
