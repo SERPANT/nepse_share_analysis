@@ -1,4 +1,7 @@
-* use a database to store share key and value
-* use a database to store data of all quaterly and yearly data
-* impement pagination. Request to the api should fetch 3 data at a time. until a limit of all is reacted repeat
-* Moving averages. EPS value, face value all information should be there
+* use a database to store share key and value (Done)
+* use a database to store data of all quaterly and yearly data (done)
+* impement pagination. Request to the api should fetch 3 data at a time. until a limit of all is reacted repeat (done)
+* Moving averages. EPS value, face value all information should be there (done)
+
+
+* plot 52 weeks high in graph

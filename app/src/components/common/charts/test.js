@@ -16,74 +16,86 @@ function ShareDetails(props) {
       value: smallestValue.y,
     },
     {
-      label: 'largest Value',
-      value: largestValue.y,
-    },
-    {
-      label: 'Value at start',
-      value: valueAtTheStart.y,
-    },
-    {
-      label: 'Value at End',
-      value: valueAtTheEnd.y,
-    },
-    {
-      label: 'Largest Change',
-      value: largestValue.y - smallestValue.y,
-    },
-    {
-      label: 'Percentage Value',
-      value: percentageChange,
-    },
-    {
-      label: 'Price Change Value',
-      value: valueAtTheEnd.y - valueAtTheStart.y,
-    },
-    {
-      label: 'Book Value',
-      value: shareBasicInfo.book_value,
-    },
-    {
       label: 'EPS',
       value: shareBasicInfo.eps,
     },
     {
-      label: 'One year yeild',
-      value: shareBasicInfo.one_year_yield,
+      label: '52 weeks low',
+      value: movingAverageValue['52 weeks low'],
     },
     {
-      label: 'PBV',
-      value: shareBasicInfo.pbv,
+      label: 'largest Value',
+      value: largestValue.y,
     },
     {
       label: 'PE Ratio',
       value: shareBasicInfo.pe_ratio,
     },
     {
-      label: 'Percentage Bonus',
-      value: shareBasicInfo.percentage_bonus,
+      label: '52 weeks high',
+      value: movingAverageValue['52 weeks high'],
+    },
+    {
+      label: 'Value at start',
+      value: valueAtTheStart.y,
+    },
+    {
+      label: 'Book Value',
+      value: shareBasicInfo.book_value,
+    },
+    {
+      label: '120 days average',
+      value: movingAverageValue['120 days average'],
+    },
+    {
+      label: 'Value at End',
+      value: valueAtTheEnd.y,
+    },
+    {
+      label: 'PBV',
+      value: shareBasicInfo.pbv,
+    },
+    {
+      label: '180 days average',
+      value: movingAverageValue['180 days average'],
+    },
+    {
+      label: 'Largest Change',
+      value: largestValue.y - smallestValue.y,
     },
     {
       label: 'Percentage Divident',
       value: shareBasicInfo.percentage_bonus,
     },
     {
-      label: 'Right Share',
-      value: shareBasicInfo.right_share,
+      label: '30 days average volume',
+      value: movingAverageValue['30 days average volume '],
+    },
+    {
+      label: 'Percentage Value (calculated)',
+      value: percentageChange,
+    },
+    {
+      label: 'Percentage Bonus',
+      value: shareBasicInfo.percentage_bonus,
     },
     {
       label: 'Out standing Share',
       value: shareBasicInfo.share_outstanding,
     },
+    {
+      label: 'Price Change Value',
+      value: valueAtTheEnd.y - valueAtTheStart.y,
+    },
+    {
+      label: 'One year yeild',
+      value: shareBasicInfo.one_year_yield,
+    },
+    {
+      label: 'Right Share',
+      value: shareBasicInfo.right_share,
+    },
   ];
-
-  Object.keys(movingAverageValue).forEach((key) => {
-    const obj = {
-      label: key,
-      value: movingAverageValue[key],
-    };
-    displayObj.push(obj);
-  });
 
   return (
     <div className="share_detail-border-color row">
@@ -95,15 +107,21 @@ function ShareDetails(props) {
               return (
                 <tr>
                   <td>
-                    {displayObj[index - 2].label} :{' '}
-                    {displayObj[index - 2].value}
+                    <strong>
+                      {displayObj[index - 2].label} :{' '}
+                      {displayObj[index - 2].value}
+                    </strong>
                   </td>
                   <td>
-                    {displayObj[index - 1].label} :{' '}
-                    {displayObj[index - 1].value}
+                    <strong>
+                      {displayObj[index - 1].label} :{' '}
+                      {displayObj[index - 1].value}
+                    </strong>
                   </td>
                   <td>
-                    {displayObj[index].label} : {displayObj[index].value}
+                    <strong>
+                      {displayObj[index].label} : {displayObj[index].value}
+                    </strong>
                   </td>
                 </tr>
               );
