@@ -17,7 +17,7 @@ def fetch_all_with_share():
         for share in category["share"]:
             share["moving_avearge_values"]= moving_average_value_data[share["symbol"]]
     
-    return category
+    return dic_category_array
 
 
     

@@ -36,6 +36,7 @@ const Routes = (props) => {
           path={ROUTES.DAILY_SUB_PLOT_ALL}
           render={() => (
             <DailySubPlotAll
+              selectedCategory={props.selectedCategory}
               fetchSharePriceData={props.fetchSharePriceData}
               shareCategories={props.shareCategories}
               shareDailyData={props.shareDailyData}
@@ -49,6 +50,7 @@ const Routes = (props) => {
           path={ROUTES.MONTHLY_SUB_PLOT_ALL}
           render={() => (
             <MonthlySubPlotAll
+              selectedCategory={props.selectedCategory}
               fetchSharePriceData={props.fetchSharePriceData}
               shareCategories={props.shareCategories}
               shareMonthlyData={props.shareMonthlyData}
@@ -88,6 +90,7 @@ const Routes = (props) => {
           path={ROUTES.WEEKLY_SUB_PLOT_ALL}
           render={() => (
             <WeeklySubPlotAll
+              selectedCategory={props.selectedCategory}
               fetchSharePriceData={props.fetchSharePriceData}
               shareCategories={props.shareCategories}
               shareWeekData={props.shareWeekData}
@@ -101,6 +104,7 @@ const Routes = (props) => {
           path={ROUTES.QUATERLY_SUB_PLOT_ALL}
           render={() => (
             <QuaterlySubPlotAll
+              selectedCategory={props.selectedCategory}
               fetchSharePriceData={props.fetchSharePriceData}
               shareCategories={props.shareCategories}
               shareQuaterlyData={props.shareQuaterlyData}
@@ -127,6 +131,7 @@ const Routes = (props) => {
           path={ROUTES.YEARLY_SUB_PLOT_ALL}
           render={() => (
             <YearlySubPlotAll
+              selectedCategory={props.selectedCategory}
               fetchSharePriceData={props.fetchSharePriceData}
               shareCategories={props.shareCategories}
               shareYearlyData={props.shareYearlyData}

@@ -6,7 +6,7 @@ import ChartMapperLine from '../common/charts/ChartMapperLine';
 import TIME_INTERVAL_TYPE from '../../constants/timeIntervalType';
 
 function YearlySubPlotAll(props) {
-  const { shareYearlyData, loading, shareCategories } = props;
+  const { shareYearlyData, loading, shareCategories, selectedCategory } = props;
   const { onChangeCategory } = props;
 
   return (
@@ -29,6 +29,7 @@ function YearlySubPlotAll(props) {
           )}
           {!loading && (
             <ChartMapperLine
+              shareBasicData={selectedCategory?.share}
               shareData={shareYearlyData}
               dateOnly={true}
               timeIntervalType={TIME_INTERVAL_TYPE.YEARLY}

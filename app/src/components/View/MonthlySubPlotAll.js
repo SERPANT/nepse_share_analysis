@@ -6,7 +6,12 @@ import ChartMapperLine from '../common/charts/ChartMapperLine';
 import TIME_INTERVAL_TYPE from '../../constants/timeIntervalType';
 
 function MonthlySubPlotAll(props) {
-  const { shareMonthlyData, loading, shareCategories } = props;
+  const {
+    shareMonthlyData,
+    loading,
+    shareCategories,
+    selectedCategory,
+  } = props;
   const { onChangeCategory } = props;
 
   return (
@@ -22,6 +27,7 @@ function MonthlySubPlotAll(props) {
         </div>
         <div className="col-sm-10">
           <ChartMapperLine
+            shareBasicData={selectedCategory?.share}
             shareData={shareMonthlyData}
             dateOnly={true}
             timeIntervalType={TIME_INTERVAL_TYPE.MONTHLY}

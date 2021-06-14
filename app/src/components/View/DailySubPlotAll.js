@@ -9,7 +9,7 @@ import SideBar from '../common/sidebar/sidebar';
 import TIME_INTERVAL_TYPE from '../../constants/timeIntervalType';
 
 function DailySubPlot(props) {
-  const { shareDailyData, loading, shareCategories } = props;
+  const { shareDailyData, loading, shareCategories, selectedCategory } = props;
   const { onChangeCategory } = props;
 
   return (
@@ -25,6 +25,7 @@ function DailySubPlot(props) {
         </div>
         <div className="col-sm-10">
           <ChartMapperLine
+            shareBasicData={selectedCategory?.share}
             shareData={shareDailyData}
             timeIntervalType={TIME_INTERVAL_TYPE.DAILY}
             fetchSharePriceData={props.fetchSharePriceData}

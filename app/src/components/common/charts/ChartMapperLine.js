@@ -1,7 +1,7 @@
 import React from 'react';
 
 import LineChart from './LineChart';
-import ShareDetails from './ShareDetails';
+import ShareDetails from './test';
 
 import dateUtil from '../../../utils/date';
 import { SUB_PLOT_HEIGHT } from '../../../constants/graph';
@@ -24,9 +24,16 @@ class ChartMapperLine extends React.Component {
   };
 
   render() {
+    const { shareData, shareBasicData } = this.props;
+
     return (
       <div>
-        {this.props.shareData.map(({ timeList, share, shareName }) => {
+        {shareData.map(({ timeList, share, shareName }) => {
+          const {
+            share_basic_info,
+            moving_avearge_values,
+          } = shareBasicData.find(({ symbol }) => symbol === share);
+
           let smallestValue = { y: Number.MAX_VALUE };
           let largestValue = { y: Number.MIN_VALUE };
           let valueAtTheStart = {};
@@ -77,6 +84,8 @@ class ChartMapperLine extends React.Component {
                   largestValue={largestValue}
                   valueAtTheStart={valueAtTheStart}
                   valueAtTheEnd={valueAtTheEnd}
+                  shareBasicInfo={share_basic_info[0]}
+                  movingAverageValue={moving_avearge_values}
                 />
               </div>
             </div>

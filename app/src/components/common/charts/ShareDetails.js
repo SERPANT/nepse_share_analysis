@@ -1,7 +1,14 @@
 function ShareDetails(props) {
-  const { smallestValue, largestValue, valueAtTheStart, valueAtTheEnd } = props;
+  const {
+    smallestValue,
+    largestValue,
+    valueAtTheStart,
+    valueAtTheEnd,
+    shareBasicInfo,
+    movingAverageValue,
+  } = props;
 
-  let percentageChange = (valueAtTheEnd.y - valueAtTheStart.y) / 100;
+  const percentageChange = (valueAtTheEnd.y - valueAtTheStart.y) / 100;
 
   return (
     <div className="card share_detail-border-color">
@@ -33,6 +40,28 @@ function ShareDetails(props) {
             Price Change Value: {valueAtTheEnd.y - valueAtTheStart.y}
           </strong>
         </li>
+        {Object.keys(shareBasicInfo).map((key) => {
+          return (
+            <li className="list-group-item">
+              <strong>
+                {key}:{' '}
+                {shareBasicInfo[key] == -1 ? 'No data' : shareBasicInfo[key]}
+              </strong>
+            </li>
+          );
+        })}
+        {Object.keys(movingAverageValue).map((key) => {
+          return (
+            <li className="list-group-item">
+              <strong>
+                {key}:{' '}
+                {movingAverageValue[key] == -1
+                  ? 'No data'
+                  : movingAverageValue[key]}
+              </strong>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
