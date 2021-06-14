@@ -12,14 +12,8 @@ class Share_Basic_Info(Base):
     # market_price = Column(Numeric(precision = 2, asdecimal=True))
     # percentage_change = Column(Float)
     
-    # fifty_two_weeks_low = Column(Numeric(precision = 2, asdecimal=True))
-    # fifty_two_weeks_high = Column(Numeric(precision = 2, asdecimal=True))
-    # hundred_eighty_average = Column(Numeric(precision = 2, asdecimal=True))
-    # hundred_twenty_average = Column(Numeric(precision = 2, asdecimal=True))
-    # thirty_day_average_volume = Column(String(50))
-    
     share_outstanding = Column(String(20))
-    one_year_yield = Column(Float)
+    one_year_yield = Column(String(10))
     eps = Column(String(50))
     eps_value = Column(Numeric(precision = 10,scale = 4, asdecimal=True))
     pe_ratio = Column(Float)

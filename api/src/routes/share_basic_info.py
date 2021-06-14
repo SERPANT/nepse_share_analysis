@@ -22,17 +22,28 @@ def create():
         share_outstanding = data["share_outstanding"], 
         one_year_yield = data["one_year_yield"],
         eps = data["eps"],
-        eps_value = Decimal(data["eps_value"]),
-        pe_ratio = data["pe_ratio"],
-        book_value = Decimal(data["book_value"]),
-        pbv = data["pbv"],
+
+        eps_value = -1 if data["eps_value"] == '' else  Decimal(data["eps_value"]),
+
+        pe_ratio = -1 if data["pe_ratio"] == '' else data["pe_ratio"],
+
+        book_value = -1 if data["book_value"] == '' else Decimal(data["book_value"]),
+        
+        pbv = -1 if data["pbv"] == '' else data["pe_ratio"],
         percentage_divident = data["percentage_divident"], 
-        percentage_divident_value = data["percentage_divident_value"], 
+
+        percentage_divident_value =  -1 if data["percentage_divident_value"] == '' else data["percentage_divident_value"], 
+
         percentage_bonus = data["percentage_bonus"], 
-        percentage_bonus_value = data["percentage_bonus_value"], 
+
+        percentage_bonus_value =  -1 if data["percentage_bonus_value"] == '' else data["percentage_bonus_value"], 
+
         right_share = data["right_share"], 
-        right_share_value = data["right_share_value"], 
-        record_date =  datetime.strptime(data["record_date"], '%Y-%m-%d %H:%M:%S'),
+
+        right_share_value = data["right_share_value"],
+
+        record_date =  datetime.strptime(data["record_date"], '%Y-%m-%d'),
+
         share_symbol = data["share_symbol"])
     
     share_basic_info_services.create(share_basic_info_obj)

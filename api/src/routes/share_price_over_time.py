@@ -1,7 +1,7 @@
+from decimal import Decimal
 from datetime import datetime, timedelta
 from flask import Blueprint, Response, request
 
-from decimal import Decimal
 
 from models.share_price import Share_Price 
 import services.share_price_over_time as share_price_over_time_services

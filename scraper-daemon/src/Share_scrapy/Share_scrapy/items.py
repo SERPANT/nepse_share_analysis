@@ -33,4 +33,5 @@ class Share_Basic_Info(scrapy.Item):
     right_share_value = scrapy.Field()
     thirty_day_average_volume = scrapy.Field()
     recorded_date = scrapy.Field()
+    share_symbol = scrapy.Field()
 

@@ -5,7 +5,8 @@ from models.share_categories import Share_Category
 import services.share_categories as share_categories_services
 
 from constants.routes import ROUTES
-from utils.alchemy_encoder import AlchemyEncoder
+
+import json
 
 share_category_route = Blueprint('share_category', __name__, url_prefix=ROUTES.SHARE_CATEGORY)
 
@@ -15,7 +16,7 @@ def fetch_all():
     
     response = Response()
     response.headers["Content-Type"] = "application/json"
-    response.data = AlchemyEncoder.parse_model_to_json(data, ['share_prices'])
+    response.data = json.dumps(data)
     
     return response
 
