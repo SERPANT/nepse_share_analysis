@@ -183,8 +183,6 @@ class MerolaganiScrapperSpider(scrapy.Spider):
   ]
 
     custom_settings = {
-        'FEED_URI' : "../../../../../data/test/share_info.json",
-        'FEED_FORMAT' : "json",
          'ITEM_PIPELINES': {
             'Share_scrapy.pipelines.Save_Share_Data_Mero_Lagani': 300,
             }

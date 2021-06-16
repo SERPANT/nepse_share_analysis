@@ -1,6 +1,0 @@
-[
-{"symbol": "SHL", "time_form": "D", "share_name": "Soaltee Hotel Limited", "time_list": [{"time": "2021-05-30 16:45:00", "value": 216}, {"time": "2021-05-30 16:50:00", "value": 220}, {"time": "2021-05-30 16:55:00", "value": 220}, {"time": "2021-05-30 16:00:00", "value": 220}]},
-{"symbol": "OHL", "time_form": "D", "share_name": "Oriental Hotels Limited", "time_list": [{"time": "2021-05-30 16:50:00", "value": 464}, {"time": "2021-05-30 16:55:00", "value": 472}, {"time": "2021-05-30 16:00:00", "value": 490}]},
-{"symbol": "CGH", "time_form": "D", "share_name": "Chandragiri Hills Limited", "time_list": [{"time": "2021-05-30 16:45:00", "value": 1815}, {"time": "2021-05-30 16:50:00", "value": 1815}, {"time": "2021-05-30 16:55:00", "value": 1810}, {"time": "2021-05-30 16:00:00", "value": 1800}]},
-{"symbol": "TRH", "time_form": "D", "share_name": "Taragaon Regency Hotel Limited", "time_list": [{"time": "2021-05-30 16:30:00", "value": 325}, {"time": "2021-05-30 16:50:00", "value": 325}, {"time": "2021-05-30 16:55:00", "value": 336}]}
-]

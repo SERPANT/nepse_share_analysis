@@ -10,6 +10,7 @@ import YearlyMainGraph from './components/View/YearlyMainGraph';
 import YearlySubPlotAll from './components/View/YearlySubPlotAll';
 import EPSComparision from './components/View/EPSComparision';
 import PEComparision from './components/View/PEComparision';
+import TechnicalInfo from './components/View/TechnicalInfo';
 
 import QuaterlyMainGraph from './components/View/QuaterlyMainGraphAll';
 import QuaterlySubPlotAll from './components/View/QuaterlySubPlotAll';
@@ -173,6 +174,7 @@ const Routes = (props) => {
             />
           )}
         />
+        <Route path={ROUTES.TECHNICAL_INFO} component={TechnicalInfo} />
         <Route
           path={ROUTES.HOME}
           render={() => (

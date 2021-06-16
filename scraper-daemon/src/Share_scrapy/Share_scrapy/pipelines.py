@@ -5,12 +5,15 @@
 
 
 # useful for handling different item types with a single interface
+import json
 from itemadapter import ItemAdapter
 from scrapy.utils.serialize import ScrapyJSONEncoder
 
 import Share_scrapy.services.share as share_services
 import Share_scrapy.services.moving_average as moving_average_services
 import Share_scrapy.services.share_basic_info as share_basic_info_services
+
+from datetime import datetime
 
 class ShareScrapyPipeline:
     def process_item(self, item, spider):
@@ -44,14 +47,30 @@ class DuplicatePipeLine:
         self.time_seen.clear()
         return item
 
+class Store_Latest_price_data:
+    def process_item(self, item, spider):
+        latest_data = share_services.get_latest_record_for_share(item["symbol"])
+
+        latest_date =  datetime.strptime(latest_data["date_time"], '%Y-%m-%d %H:%M:%S')
+
+        new_time_list = []
+
+        for timeVal in item['time_list']:
+            if(timeVal["time"] > latest_date):
+                new_time_list.append(timeVal)
+                
+        item["time_list"] = new_time_list
+
+        return item
+
 class Save_Share_Price_To_Data_Base:
      def process_item(self, item, spider):
          _encoder = ScrapyJSONEncoder()
          json_encoded_item = _encoder.encode(item)
 
          share_services.store_share_data(json_encoded_item)
-
          return item
+    
 
 class Save_Share_Data_Mero_Lagani:
     def process_item(self, item, spider):

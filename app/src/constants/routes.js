@@ -11,6 +11,7 @@ const ROUTES = {
   QUATERLY_MAIN_GRAPH: '/quaterlymaingraph',
   YEARLY_SUB_PLOT_ALL: '/yearlysubplotall',
   QUATERLY_SUB_PLOT_ALL: '/quaterlysubplotall',
+  TECHNICAL_INFO: '/technicalinfo',
   HOME: '/',
 };
 

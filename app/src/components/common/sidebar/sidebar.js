@@ -44,6 +44,11 @@ const SideBar = (props) => {
             PE Ratio Comparision chart
           </NavLink>
         </MenuItem>
+        <MenuItem>
+          <NavLink to={ROUTES.TECHNICAL_INFO}>
+            Basic Technical analysis info
+          </NavLink>
+        </MenuItem>
       </Menu>
     </ProSidebar>
   );

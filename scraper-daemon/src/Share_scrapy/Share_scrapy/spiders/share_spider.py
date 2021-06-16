@@ -30,10 +30,9 @@ class ShareSpiderSpider(scrapy.Spider):
         share_info = START_URL[arguments["category"]]
 
         custom_settings = {
-            'FEED_URI' : share_info.file_location[arguments['time_val']],
-            'FEED_FORMAT' : "json",
             'ITEM_PIPELINES': {
                 'Share_scrapy.pipelines.DuplicatePipeLine': 300,
+                'Share_scrapy.pipelines.Store_Latest_price_data': 400,
                 'Share_scrapy.pipelines.Save_Share_Price_To_Data_Base': 500
                 }
             }

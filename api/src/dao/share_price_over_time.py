@@ -2,6 +2,7 @@ from db import db
 
 from models.share_price import Share_Price
 from utils.alchemy_encoder import AlchemyEncoder
+from sqlalchemy import desc
 
 def fetch_range_by_share(start_date, end_date, share_symbol, share_name):
     session = db.create_session()
@@ -33,3 +34,8 @@ def create(share_price_obj):
         raise
         print('creating share price object failed')
 
+
+def fetch_latest_record(share_symbol):
+    session = db.create_session()
+
+    return session.query(Share_Price).filter(Share_Price.share_symbol == share_symbol).order_by(desc(Share_Price.date_time)).first()

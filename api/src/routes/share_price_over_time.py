@@ -1,3 +1,4 @@
+import json
 from decimal import Decimal
 from datetime import datetime, timedelta
 from flask import Blueprint, Response, request
@@ -8,8 +9,7 @@ import services.share_price_over_time as share_price_over_time_services
 
 from constants.routes import ROUTES
 
-
-import json
+from utils.alchemy_encoder import AlchemyEncoder
 
 share_price_routes = Blueprint('share_price', __name__, url_prefix= ROUTES.SHARE_PRICE )
 
@@ -96,3 +96,16 @@ def insert_data():
         share_price_over_time_services.create(share_price_obj)
 
     return Response(status = 201, mimetype='application/json')
+
+
+@share_price_routes.route('/latest', methods = ["GET"])
+def fetch_latest_record():
+    share_symbol = request.args.get('shareSymbol')
+    record = share_price_over_time_services.fetch_latest_record(share_symbol)
+
+    response = Response()
+    response.headers["Content-Type"] = "application/json"
+    response.data = AlchemyEncoder.parse_model_obj_to_json(record, [])
+
+    return response
+        

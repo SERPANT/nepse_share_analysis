@@ -1,4 +1,0 @@
-[
-{"symbol": "BFC", "time_form": "W", "share_name": "Best Finance Company Ltd", "time_list": [{"time": "2021-05-23 05:45:00", "value": 290.0}, {"time": "2021-05-24 05:45:00", "value": 293.0}, {"time": "2021-05-25 05:45:00", "value": 287.0}, {"time": "2021-05-27 05:45:00", "value": 297.0}]},
-{"symbol": "CFCL", "time_form": "W", "share_name": "Central Finance Co. Ltd", "time_list": [{"time": "2021-05-23 05:45:00", "value": 315.0}, {"time": "2021-05-24 05:45:00", "value": 302.0}, {"time": "2021-05-25 05:45:00", "value": 299.0}, {"time": "2021-05-27 05:45:00", "value": 305.0}]}
-]

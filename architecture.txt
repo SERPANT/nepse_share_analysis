@@ -5,4 +5,10 @@
 
 
 * plot 52 weeks high in graph
-* chart for 
+* how much will this number of share cost me
+* EPS growth of the company for the last 5 years
+* Demand of the share on the secondary market for the last 1 year or more (point 4) (Broker level, if possible individual level too)
+* PE ration with ( point 4)
+* 100 share yearly profit, monthly profit, weekly profit and quaterly profit comparision
+* one year largest change comparision chart
+* Need a average line in bar graphs

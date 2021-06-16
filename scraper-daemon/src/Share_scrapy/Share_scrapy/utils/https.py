@@ -7,3 +7,7 @@ def post(url, body):
     # needs to be async otherwise too slow
     headers = {'content-type': 'application/json'}
     requests.post(url, data = body, headers=headers)
+
+
+def get(url):
+    return requests.get(url)
