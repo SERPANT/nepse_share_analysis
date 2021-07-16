@@ -12,3 +12,10 @@
 * 100 share yearly profit, monthly profit, weekly profit and quaterly profit comparision
 * one year largest change comparision chart
 * Need a average line in bar graphs
+
+
+
+# Architecture
+- The scraping job that is used to scrap data from various sources should be a chron job in azure function
+- API is also in azure function
+- front end is to be hosted
