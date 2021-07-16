@@ -1,2 +1,2 @@
-./scraper-daemon/venv
-./api/venv
+/scraper-daemon/venv
+/api/venv
