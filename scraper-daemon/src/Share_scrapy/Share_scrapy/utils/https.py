@@ -11,3 +11,9 @@ def post(url, body):
 
 def get(url):
     return requests.get(url)
+
+
+def put(url, body):
+    headers = {'content-type': 'application/json'}
+    return requests.put(url, data = body, headers=headers)
+    

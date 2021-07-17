@@ -8,6 +8,7 @@ class Share(Base):
 
     name = Column(String(150), nullable = False)
     symbol = Column(String(10), primary_key = True,  unique=True, nullable = False)
+    share_number_nepse = Column(Integer)
 
     share_category_id = Column(Integer, ForeignKey('share_category.id'), nullable = False)  
 

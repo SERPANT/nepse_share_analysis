@@ -51,8 +51,10 @@ class Store_Latest_price_data:
     def process_item(self, item, spider):
         latest_data = share_services.get_latest_record_for_share(item["symbol"])
 
-        latest_date =  datetime.strptime(latest_data["date_time"], '%Y-%m-%d %H:%M:%S')
+        if(latest_data == None):
+             return item
 
+        latest_date =  datetime.strptime(latest_data["date_time"], '%Y-%m-%d %H:%M:%S')
         new_time_list = []
 
         for timeVal in item['time_list']:
@@ -140,3 +142,20 @@ class Save_Share_Data_Mero_Lagani:
         share_basic_info_services.store_share_data(json_share_basic_info)
 
         return item
+
+
+class Insert_New_Share:
+    def process_item(self, item, spider):
+
+        share_symbol = item["share_symbol"].upper()
+
+        share_record = share_services.get_share_record(share_symbol)
+
+        if(share_record == None):
+            return item
+
+        if(share_record["share_number_nepse"] == None):
+            share_services.patch_share_record(
+                {"symbol": share_symbol, "share_number": item["share_number"]})
+
+        return None

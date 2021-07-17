@@ -70,5 +70,4 @@ class ShareSpiderSpider(scrapy.Spider):
         
         nepse_share_time_obj["time_list"] = time_list
 
-        print(nepse_share_time_obj)
         return nepse_share_time_obj
