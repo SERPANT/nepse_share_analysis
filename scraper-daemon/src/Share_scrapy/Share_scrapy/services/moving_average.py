@@ -1,4 +1,6 @@
 from Share_scrapy.utils.https import post
 
+from Share_scrapy.config import CONFIG
+
 def store_share_data(moving_average):
-    post('http://127.0.0.1:5000/api/movingaverage/', moving_average)
+    post(CONFIG.MOVING_AVERAGE, moving_average)

@@ -35,3 +35,7 @@ class Share_Basic_Info(scrapy.Item):
     recorded_date = scrapy.Field()
     share_symbol = scrapy.Field()
 
+
+class Nepse_Share_List(scrapy.Item):
+    list_item = scrapy.Field()
+

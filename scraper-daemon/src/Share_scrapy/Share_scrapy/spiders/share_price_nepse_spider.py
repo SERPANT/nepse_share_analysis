@@ -6,38 +6,39 @@ from scrapy import Request
 from datetime import datetime
 
 from Share_scrapy.items import NEPSE_share_time_obj
-from Share_scrapy.constants.website_link import START_URL
+from Share_scrapy.constants import website_link
 from Share_scrapy.utils.cmd_args import parse_named_command_line_args
 
-class ShareSpiderSpider(scrapy.Spider):
-    name = 'share_spider'
+class SharePriceNepseSpider(scrapy.Spider):
+    name = 'share_price_nepse_spider'
     allowed_domains = ['http://www.nepalstock.com/']
     time = None
 
+    custom_settings = {
+        'ITEM_PIPELINES': {
+            'Share_scrapy.pipelines.share_price_nepse.duplicate_pipeline.DuplicatePipeLine': 300,
+            'Share_scrapy.pipelines.share_price_nepse.store_latest_price_data.Store_Latest_price_data': 400,
+            'Share_scrapy.pipelines.share_price_nepse.save_share_price_to_data_base.Save_Share_Price_To_Data_Base': 500
+            }
+        }
+
     def __init__(self, category = '', time_val = ''):
+
+        # fetching time value as year, day, month, quater
         self.time = time_val
-        shares_info = START_URL[category]
+
+        # get company list
+        shares_info = website_link.START_URL[category]
+
+        # set the url links in share_list
         self.share_list = shares_info.links
 
     def start_requests(self):
+
+        # generate start url from company list
         for company in self.share_list:
             url = 'http://www.nepalstock.com/company/graphdata/' + str(company["value"]) + "/" + self.time 
             yield Request(url,callback=self.parse)
-
-    @classmethod
-    def update_settings(cls, settings):
-        arguments = parse_named_command_line_args(sys.argv[2:], 'a:') 
-        share_info = START_URL[arguments["category"]]
-
-        custom_settings = {
-            'ITEM_PIPELINES': {
-                'Share_scrapy.pipelines.DuplicatePipeLine': 300,
-                'Share_scrapy.pipelines.Store_Latest_price_data': 400,
-                'Share_scrapy.pipelines.Save_Share_Price_To_Data_Base': 500
-                }
-            }
-
-        settings.setdict(custom_settings, priority='spider')
 
     
     def find_company_by_value(self, value):
@@ -50,14 +51,11 @@ class ShareSpiderSpider(scrapy.Spider):
         body = response.body
         live_market_data = json.loads(body)
         company_value = int(response.url.split('/')[5])
-        time_form = response.url.split('/')[6]
 
         company_obj = self.find_company_by_value(company_value)
         
         nepse_share_time_obj = NEPSE_share_time_obj()
         nepse_share_time_obj["symbol"] = company_obj["symbol"]
-        #nepse_share_time_obj["time_form"] = time_form
-        #nepse_share_time_obj["share_name"] = company_obj["name"]
             
         time_list = []
 

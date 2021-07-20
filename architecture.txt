@@ -17,6 +17,7 @@
 
 * Pull share data from database
 * add new share
+* 
 
 
 # Architecture

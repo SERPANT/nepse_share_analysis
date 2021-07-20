@@ -1,26 +1,27 @@
 import json
+
 from Share_scrapy.utils.https import post, get, put
 
-def store_share_data(share_data):
-    post('http://127.0.0.1:5000/api/shareprice/', share_data)
+from Share_scrapy.config import CONFIG
 
-
-def get_latest_record_for_share(share_symbol):
-    response = get(f'http://127.0.0.1:5000/api/shareprice/latest?shareSymbol={share_symbol}')
-
-    return response.json()
 
 def get_share_record(share_symbol):
-    response = get(f'http://127.0.0.1:5000/api/share/{share_symbol}')
+    response = get(f'{CONFIG.SHARE}{share_symbol}')
 
     return response.json()
 
 
 def patch_share_record(share):
-    print("--------------")
-    print("--------------")
-    print("--------------")
-    print("--------------")
-    print(share)
-    put('http://127.0.0.1:5000/api/share/', json.dumps(share))
+    put(CONFIG.SHARE, json.dumps(share))
+
+
+def create_new_share_record(share):
+    post(CONFIG.SHARE, json.dumps(share))
+
+
+def get_share_name_from_symbol(share_symbol):
+    response = get(f'https://merolagani.com/CompanyDetail.aspx?symbol={share_symbol}')
+
+    print(response.xpath("//*[@id='stockChartSelect']/option"))
+
     

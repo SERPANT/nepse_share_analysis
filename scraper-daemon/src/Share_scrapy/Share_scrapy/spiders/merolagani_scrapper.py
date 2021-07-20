@@ -184,7 +184,7 @@ class MerolaganiScrapperSpider(scrapy.Spider):
 
     custom_settings = {
          'ITEM_PIPELINES': {
-            'Share_scrapy.pipelines.Save_Share_Data_Mero_Lagani': 300,
+            'Share_scrapy.pipelines.merolagani_scrapper.save_share_data_mero_lagani.Save_Share_Data_Mero_Lagani': 300,
             }
     }
 
