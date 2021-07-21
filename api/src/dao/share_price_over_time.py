@@ -10,7 +10,7 @@ def fetch_range_by_share(start_date, end_date, share_symbol, share_name):
     start_date_str = start_date.strftime("%Y-%m-%d %H:%M:%S")
     end_date_str = end_date.strftime("%Y-%m-%d %H:%M:%S")
 
-    data = session.query(Share_Price).filter(Share_Price.share_symbol == share_symbol.strip().upper(), Share_Price.date_time >= start_date_str, Share_Price.date_time <= end_date_str).all()
+    data = session.query(Share_Price).filter(Share_Price.share_symbol == share_symbol.strip().upper(), Share_Price.date_time >= start_date_str, Share_Price.date_time <= end_date_str).order_by(Share_Price.date_time.asc()).all()
     
     modified_dic = {
         "share": share_symbol,
