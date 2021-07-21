@@ -52,3 +52,13 @@ def get_by_share_symbol(share_symbol):
      "share_prices"])
 
     return response
+
+@share_routes.route('/', methods = ["GET"])
+def fetch_all():
+    shares = share_services.fetch_all()
+
+    response = Response()
+    response.headers["Content-Type"] = "application/json"
+    response.data = AlchemyEncoder.parse_model_list_to_json(shares, ["share_basic_info", "share_category", "moving_average_values", "share_prices"]) 
+
+    return response

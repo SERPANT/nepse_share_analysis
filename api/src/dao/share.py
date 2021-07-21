@@ -30,4 +30,10 @@ def fetch_by_symbol(symbol):
 
     return session.query(Share).filter(Share.symbol == symbol).first()
 
+
+def fetch_all(): 
+    session = db.create_session()
+
+    return session.query(Share).all()
+
     

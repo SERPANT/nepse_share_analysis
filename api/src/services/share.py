@@ -9,4 +9,8 @@ def update(symbol, share_number):
 
 def fetch_by_symbol(symbol):
     return share_dao.fetch_by_symbol(symbol)
+
+
+def fetch_all():
+    return share_dao.fetch_all()
     

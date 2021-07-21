@@ -24,4 +24,10 @@ def get_share_name_from_symbol(share_symbol):
 
     print(response.xpath("//*[@id='stockChartSelect']/option"))
 
+
+def fetch_all():
+    response = get(f'{CONFIG.SHARE}')
+
+    return response.json()
+
     

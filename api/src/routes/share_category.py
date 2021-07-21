@@ -1,6 +1,7 @@
 import json
 from flask import Blueprint, Response, request
 
+from utils.alchemy_encoder import AlchemyEncoder
 from models.share_categories import Share_Category
 import services.share_categories as share_categories_services
 
@@ -18,6 +19,17 @@ def fetch_all():
     response.headers["Content-Type"] = "application/json"
     response.data = json.dumps(data)
     
+    return response
+
+@share_category_route.route('/name', methods = ['GET'])
+def fetch_by_name():
+    name = request.args.get('name')
+    category = share_categories_services.fetch_by_name(name)
+
+    response = Response()
+    response.headers["Content-Type"] = "application/json"
+    response.data = AlchemyEncoder.parse_model_obj_to_json(category, ["share"])
+
     return response
 
 @share_category_route.route('/', methods = ['POST'])

@@ -1,10 +1,13 @@
 from box import Box
 from dotenv import dotenv_values
 
+BASE_URL = "http://127.0.0.1:5000/api"
+
 CONFIG = Box({
-    "BASE_URL": "http://127.0.0.1:5000/api",
-    "MOVING_AVERAGE": "http://127.0.0.1:5000/api/movingaverage/",
-    "SHARE_BASIC_INFO": "http://127.0.0.1:5000/api/sharebasicinfo/",
-    "SHARE_PRICE": "http://127.0.0.1:5000/api/shareprice/",
-    "SHARE": "http://127.0.0.1:5000/api/share/"
+    "BASE_URL": BASE_URL,
+    "MOVING_AVERAGE": f"{BASE_URL}/movingaverage/",
+    "SHARE_BASIC_INFO": f"{BASE_URL}/sharebasicinfo/",
+    "SHARE_PRICE": f"{BASE_URL}/shareprice/",
+    "SHARE": f"{BASE_URL}/share/",
+    "SHARE_CATEGORY": f"{BASE_URL}/sharecategory/"
 })

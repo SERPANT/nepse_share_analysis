@@ -36,6 +36,13 @@ def create(share_category):
         session.add(share_category)
         session.commit()
     except:
+        raise
         print('failed to create share category')
+
+
+def fetch_by_name(name):
+    session = db.session_maker()
+
+    return session.query(Share_Category).filter(Share_Category.name == name).first()
 
         

@@ -8,6 +8,7 @@ from datetime import datetime
 from Share_scrapy.items import NEPSE_share_time_obj
 from Share_scrapy.constants import website_link
 from Share_scrapy.utils.cmd_args import parse_named_command_line_args
+import Share_scrapy.services.share as share_services
 
 class SharePriceNepseSpider(scrapy.Spider):
     name = 'share_price_nepse_spider'
@@ -22,28 +23,25 @@ class SharePriceNepseSpider(scrapy.Spider):
             }
         }
 
-    def __init__(self, category = '', time_val = ''):
+    def __init__(self, time_val = ''):
 
         # fetching time value as year, day, month, quater
         self.time = time_val
 
-        # get company list
-        shares_info = website_link.START_URL[category]
-
         # set the url links in share_list
-        self.share_list = shares_info.links
+        self.share_list = share_services.fetch_all()
 
     def start_requests(self):
 
         # generate start url from company list
         for company in self.share_list:
-            url = 'http://www.nepalstock.com/company/graphdata/' + str(company["value"]) + "/" + self.time 
+            url = 'http://www.nepalstock.com/company/graphdata/' + str(company["share_number_nepse"]) + "/" + self.time 
             yield Request(url,callback=self.parse)
 
     
     def find_company_by_value(self, value):
         for company in self.share_list:
-            if company["value"] == value:
+            if company["share_number_nepse"] == value:
                 return company
 
 
@@ -53,7 +51,7 @@ class SharePriceNepseSpider(scrapy.Spider):
         company_value = int(response.url.split('/')[5])
 
         company_obj = self.find_company_by_value(company_value)
-        
+
         nepse_share_time_obj = NEPSE_share_time_obj()
         nepse_share_time_obj["symbol"] = company_obj["symbol"]
             
