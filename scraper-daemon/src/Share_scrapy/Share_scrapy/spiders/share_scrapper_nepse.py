@@ -5,7 +5,7 @@ from Share_scrapy.items import Nepse_Share_List
 class ShareScrapperNepseSpider(scrapy.Spider):
     name = 'share_scrapper_nepse'
     allowed_domains = ['http://www.nepalstock.com']
-    start_urls = ['http://www.nepalstock.com/']
+    start_urls = ['http://www.nepalstock.com']
 
     custom_settings = {
         'ITEM_PIPELINES': {

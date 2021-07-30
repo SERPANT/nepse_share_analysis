@@ -2,6 +2,8 @@
 * use a database to store data of all quaterly and yearly data (done)
 * impement pagination. Request to the api should fetch 3 data at a time. until a limit of all is reacted repeat (done)
 * Moving averages. EPS value, face value all information should be there (done)
+* Pull share data from database (done)
+* add new share (done)
 
 
 * plot 52 weeks high in graph
@@ -12,15 +14,21 @@
 * 100 share yearly profit, monthly profit, weekly profit and quaterly profit comparision
 * one year largest change comparision chart
 * Need a average line in bar graphs
+* till when they are top gainers 
+* Ammount of transaction of each share
 
 
-
-* Pull share data from database
-* add new share
-* 
+* floor sheet chart.
+* access TMS and pull the number of buyers and sellers for each share.
 
 
 # Architecture
 - The scraping job that is used to scrap data from various sources should be a chron job in azure function
 - API is also in azure function
 - front end is to be hosted
+
+
+
+NEW API: 
+- https://newweb.nepalstock.com/api/nots/security?nonDelisted=true
+- https://newweb.nepalstock.com/api/nots/nepse-data/floorsheet?&sort=contractId,desc
