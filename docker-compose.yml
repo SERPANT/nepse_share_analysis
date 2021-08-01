@@ -1,5 +1,15 @@
 version: '3.x'
 
 services:
+    app:
+        container-name: app
+        image: app
+        build:
+            context: ./app
+    api:
+        container-name: api
+        image: api
+        build:
+            context: ./api
 
 networks:
