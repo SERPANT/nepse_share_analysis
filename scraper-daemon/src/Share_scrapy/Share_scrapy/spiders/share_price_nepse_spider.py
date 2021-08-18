@@ -20,7 +20,9 @@ class SharePriceNepseSpider(scrapy.Spider):
             'Share_scrapy.pipelines.share_price_nepse.duplicate_pipeline.DuplicatePipeLine': 300,
             'Share_scrapy.pipelines.share_price_nepse.store_latest_price_data.Store_Latest_price_data': 400,
             'Share_scrapy.pipelines.share_price_nepse.save_share_price_to_data_base.Save_Share_Price_To_Data_Base': 500
-            }
+            },
+        # 'FEED_FORMAT': 'json',
+        # 'FEED_URI': '../../../../../data/daily.json'
         }
 
     def __init__(self, time_val = ''):
