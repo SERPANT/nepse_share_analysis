@@ -1,3 +1,4 @@
+import time
 import json
 from datetime import datetime
 
@@ -21,9 +22,9 @@ def fetch_latest_record(share_symbol):
 
 def fetch_daily_data_for_share(share_symbol, share_name):
     share = share_services.fetch_by_symbol(share_symbol)
-    share_number = share.share_number_nepse
+    # share_number = share.share_number_nepse
 
-    # share_number = 360
+    share_number = 360
 
     url = f"http://www.nepalstock.com/company/graphdata/{share_number}/D" 
 
@@ -46,7 +47,9 @@ def fetch_daily_data_for_share(share_symbol, share_name):
         return response_dic
 
     for data in json_data:
-        date_time_obj = datetime.fromtimestamp(data[0]/1000)
+        date_time = time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(data[0]/1000.0))
+
+        date_time_obj = datetime.strptime(date_time, "%Y-%m-%d %H:%M:%S")
         new_date_obj = date_time_obj.replace(second=0)
 
         min_value = int(new_date_obj.strftime("%M"))
