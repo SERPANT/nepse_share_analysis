@@ -13,7 +13,7 @@ class App extends React.Component {
 
     this.state = {
       shareCategories: [],
-      shareDailyData: {},
+      shareDailyData: [],
       shareWeekData: {},
       shareMonthlyData: {},
       shareQuaterlyData: {},
@@ -85,8 +85,15 @@ class App extends React.Component {
   };
 
   test = async (selectedCategory, func, arrayName) => {
+
     selectedCategory.share.forEach(({ symbol, name }) => {
       func(symbol, name).then((data) => {
+
+        if(data.length == 0) {
+          return;
+        }
+
+
         this.setState({
           [arrayName]: {
             ...this.state[arrayName],
@@ -132,7 +139,7 @@ class App extends React.Component {
       ({ id }) => id === selectedCategoryId
     );
 
-    const dailyData = [];
+    const dailyData =  (selectedCategory && shareDailyData[selectedCategory.name]) || [];
 
     const quaterlyData =
       (selectedCategory && shareQuaterlyData[selectedCategory.name]) || [];
@@ -145,6 +152,7 @@ class App extends React.Component {
 
     const yearlyData =
       (selectedCategory && shareYearlyData[selectedCategory.name]) || [];
+
 
     return (
       <div className="container-fluid">

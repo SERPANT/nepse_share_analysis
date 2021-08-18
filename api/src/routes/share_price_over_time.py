@@ -15,7 +15,16 @@ share_price_routes = Blueprint('share_price', __name__, url_prefix= ROUTES.SHARE
 
 @share_price_routes.route('/d')
 def get_daily_data():
-    pass
+    share_symbol = request.args.get('shareSymbol')
+    share_name = request.args.get('shareName')
+    data = share_price_over_time_services.fetch_daily_data_for_share(share_symbol, share_name)
+
+    response = Response()
+    response.headers["Content-Type"] = "application/json"
+    response.data = json.dumps(data)
+
+    return response
+
 
 @share_price_routes.route('/w')
 def get_weekly_data():

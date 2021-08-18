@@ -12,6 +12,8 @@ function DailySubPlot(props) {
   const { shareDailyData, loading, shareCategories, selectedCategory } = props;
   const { onChangeCategory } = props;
 
+  console.log("===================  999", shareDailyData)
+
   return (
     <div>
       <Header />
@@ -27,6 +29,7 @@ function DailySubPlot(props) {
           <ChartMapperLine
             shareBasicData={selectedCategory?.share}
             shareData={shareDailyData}
+            timeOnly = {true}
             timeIntervalType={TIME_INTERVAL_TYPE.DAILY}
             fetchSharePriceData={props.fetchSharePriceData}
           />

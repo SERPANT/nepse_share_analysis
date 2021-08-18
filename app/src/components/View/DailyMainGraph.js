@@ -35,8 +35,7 @@ class DailyMainGraph extends React.Component {
 
     const final_data = shareDailyData.map((bankData) => {
       const { share, timeList } = bankData;
-
-      console.log(timeList);
+      
       const time_line_data = timeList.map(({ date_time, price }) => {
         return {
           x: dateUtil.getTimeOnly(date_time),

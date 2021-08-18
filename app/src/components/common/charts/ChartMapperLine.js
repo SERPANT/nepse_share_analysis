@@ -24,7 +24,7 @@ class ChartMapperLine extends React.Component {
   };
 
   render() {
-    const { shareData, shareBasicData } = this.props;
+    const { shareData, shareBasicData, timeOnly, dateOnly } = this.props;
 
     return (
       <div>
@@ -40,8 +40,18 @@ class ChartMapperLine extends React.Component {
           let valueAtTheEnd = {};
 
           const sorted_value = timeList.map(({ date_time, price }) => {
+
+            if(timeOnly)
+            {
+              console.log("WTF")
+              return {
+                x: dateUtil.getTimeOnly(date_time),
+                y: price,
+              };
+            }
+
             return {
-              x: this.props.dateOnly
+              x: dateOnly
                 ? dateUtil.getOnlyDate(date_time)
                 : date_time,
               y: price,
