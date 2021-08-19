@@ -29,7 +29,7 @@ class DailyMainGraph extends React.Component {
   };
 
   render() {
-    const { shareDailyData, loading, shareCategories } = this.props;
+    const { shareDailyData, shareCategories } = this.props;
 
     const { onChangeCategory } = this.props;
 

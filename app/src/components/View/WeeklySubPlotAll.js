@@ -6,7 +6,7 @@ import ChartMapperLine from '../common/charts/ChartMapperLine';
 import TIME_INTERVAL_TYPE from '../../constants/timeIntervalType';
 
 function WeeklySubPlotAll(props) {
-  const { shareWeekData, loading, shareCategories, selectedCategory } = props;
+  const { shareWeekData, shareCategories, selectedCategory } = props;
   const { onChangeCategory } = props;
 
   return (

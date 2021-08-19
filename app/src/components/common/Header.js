@@ -1,5 +1,3 @@
-import NavBar from './navbar/NavBar';
-
 function Header() {
   return (
     <header className="App-header">

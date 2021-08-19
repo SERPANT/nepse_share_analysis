@@ -28,7 +28,7 @@ class YearlyMainGraph extends React.Component {
   };
 
   render() {
-    const { shareYearlyData, loading, shareCategories } = this.props;
+    const { shareYearlyData, shareCategories } = this.props;
     const { onChangeCategory } = this.props;
 
     const final_data = shareYearlyData.map((bankData) => {

@@ -28,7 +28,7 @@ class MonthlyMainGraph extends React.Component {
   };
 
   render() {
-    const { shareMonthlyData, loading, shareCategories } = this.props;
+    const { shareMonthlyData, shareCategories } = this.props;
     const { onChangeCategory } = this.props;
 
     const final_data = shareMonthlyData.map((bankData) => {

@@ -8,7 +8,6 @@ import TIME_INTERVAL_TYPE from '../../constants/timeIntervalType';
 function MonthlySubPlotAll(props) {
   const {
     shareMonthlyData,
-    loading,
     shareCategories,
     selectedCategory,
   } = props;

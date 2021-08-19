@@ -9,7 +9,7 @@ import SideBar from '../common/sidebar/sidebar';
 import TIME_INTERVAL_TYPE from '../../constants/timeIntervalType';
 
 function DailySubPlot(props) {
-  const { shareDailyData, loading, shareCategories, selectedCategory } = props;
+  const { shareDailyData, shareCategories, selectedCategory } = props;
   const { onChangeCategory } = props;
 
   return (

@@ -28,7 +28,7 @@ class QuaterlyMainGraph extends React.Component {
   };
 
   render() {
-    const { shareQuaterlyData, loading, shareCategories } = this.props;
+    const { shareQuaterlyData, shareCategories } = this.props;
     const { onChangeCategory } = this.props;
 
     const final_data = shareQuaterlyData.map((bankData) => {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import shareServices, * as shareServies from './services/shareService';
+import * as shareServices from './services/shareService';
 import shareCategoryServices from './services/shareCategories';
 
 import Routes from './Routes';

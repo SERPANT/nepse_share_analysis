@@ -28,7 +28,7 @@ class WeeklyMainGraph extends React.Component {
   };
 
   render() {
-    const { shareWeekData, loading, shareCategories } = this.props;
+    const { shareWeekData, shareCategories } = this.props;
     const { onChangeCategory } = this.props;
 
     const final_data = shareWeekData.map((shareData) => {

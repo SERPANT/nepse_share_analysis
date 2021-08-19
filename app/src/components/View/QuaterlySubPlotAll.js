@@ -8,7 +8,6 @@ import TIME_INTERVAL_TYPE from '../../constants/timeIntervalType';
 function QuaterlySubPlotAll(props) {
   const {
     shareQuaterlyData,
-    loading,
     shareCategories,
     selectedCategory,
   } = props;
