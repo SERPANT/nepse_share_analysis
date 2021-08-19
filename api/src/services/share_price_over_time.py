@@ -22,9 +22,9 @@ def fetch_latest_record(share_symbol):
 
 def fetch_daily_data_for_share(share_symbol, share_name):
     share = share_services.fetch_by_symbol(share_symbol)
-    # share_number = share.share_number_nepse
+    share_number = share.share_number_nepse
 
-    share_number = 360
+    # share_number = 360
 
     url = f"http://www.nepalstock.com/company/graphdata/{share_number}/D" 
 

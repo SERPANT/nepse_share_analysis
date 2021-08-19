@@ -12,8 +12,6 @@ function DailySubPlot(props) {
   const { shareDailyData, loading, shareCategories, selectedCategory } = props;
   const { onChangeCategory } = props;
 
-  console.log("===================  999", shareDailyData)
-
   return (
     <div>
       <Header />
