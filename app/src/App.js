@@ -89,7 +89,7 @@ class App extends React.Component {
     selectedCategory.share.forEach(({ symbol, name }) => {
       func(symbol, name).then((data) => {
 
-        if(data.length == 0) {
+        if(data.length === 0) {
           return;
         }
 
