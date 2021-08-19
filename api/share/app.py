@@ -20,4 +20,4 @@ app.register_blueprint(moving_average_value_routes)
 app.register_blueprint(share_basic_info_routes)
 
 if __name__ == "__main__":
-    app.run(port=5000)
+    app.run(port=8000)
