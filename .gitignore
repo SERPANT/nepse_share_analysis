@@ -1,2 +1,18 @@
 /scraper-daemon/venv
 /api/venv
+
+# Pycache
+__pycache__
+
+# env
+.env
+.venv
+venv
+.env.production
+.env.dev
+.env.qa
+.env.uat
+
+#VScode
+.vscode/*
+
