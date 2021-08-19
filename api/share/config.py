@@ -7,11 +7,11 @@ dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
 db = Box({
-    "DB_HOST":  os.environ.get("DB_HOST"),
-    "DB_PORT": os.environ.get("DB_PORT"),
-    "DB_NAME": os.environ.get("DB_NAME"),
-    "DB_PASSWORD": os.environ.get("DB_PASSWORD"),
-    "DB_USER": os.environ.get("DB_USER")
+    "DB_HOST":  "sh-database.postgres.database.azure.com",
+    "DB_PORT": "5432",
+    "DB_NAME": "share_info",
+    "DB_PASSWORD": "123456798rockoN.",
+    "DB_USER": "shreejit@sh-database"
     })
 
 print("====================================")
