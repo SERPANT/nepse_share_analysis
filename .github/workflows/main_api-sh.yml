@@ -46,7 +46,6 @@ jobs:
         path: |
           .
           !venv/
-      working-directory: ${{env.working-directory}}
 
   deploy:
     runs-on: ubuntu-latest
