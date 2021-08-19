@@ -9,13 +9,17 @@ def fetch_all():
 
 def fetch_all_with_share():
     category_data = share_categories_dao.fetch_all_with_share()
+
     moving_average_value_data = moving_average_value_services.get_all_latest_for_all_share()
 
     dic_category_array = AlchemyEncoder.convert_model_list_to_dic(category_data, ['share_prices', 'moving_average_values'])
 
     for category in dic_category_array:
         for share in category["share"]:
-            share["moving_avearge_values"]= moving_average_value_data[share["symbol"]]
+            try:
+                share["moving_avearge_values"]= moving_average_value_data[share["symbol"]]
+            except:
+                 share["moving_avearge_values"] = {}
     
     return dic_category_array
 
