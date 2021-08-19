@@ -1,5 +1,6 @@
 from box import Box
 
+
 SHARE_CATEGORY_RELATION = Box({
     "CommercialBank": 6,
     "FinanicalBank": 7,
