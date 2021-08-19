@@ -13,9 +13,6 @@ db = Box({
     "DB_PASSWORD": "123456798rockoN.",
     "DB_USER": "shreejit@sh-database"
     })
-
-print("====================================")
-print(db)
     
 CONFIG = Box({
     "db": db

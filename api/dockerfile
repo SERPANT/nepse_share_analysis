@@ -2,7 +2,7 @@ From python:3.7.11-buster
 COPY . /api
 WORKDIR /api
 RUN pip install -r requirements.txt
-EXPOSE 5000
+EXPOSE 8000
 
-CMD python ./src/api
+CMD python ./share/app.py
 
