@@ -29,10 +29,6 @@ jobs:
         python -m venv venv
         source venv/bin/activate
 
-    - name: list files =====================================
-      run: ls
-      working-directory: ${{env.working-directory}}
-
     - name: Install dependencies
       run: pip install -r requirements.txt
       working-directory: ${{env.working-directory}}
@@ -60,6 +56,9 @@ jobs:
         with:
           name: python-app
           path: .
+
+      - name: look into what is here ====================================
+        run: ls
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
