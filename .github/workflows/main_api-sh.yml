@@ -13,6 +13,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./api
 
     steps:
     - uses: actions/checkout@v2
@@ -26,9 +28,6 @@ jobs:
       run: |
         python -m venv venv
         source venv/bin/activate
-
-    - name: Go inside API folder
-      run: cd api
 
     - name: list files =====================================
       run: ls
