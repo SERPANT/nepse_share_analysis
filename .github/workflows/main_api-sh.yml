@@ -57,9 +57,6 @@ jobs:
           name: python-app
           path: .
 
-      - name: look into what is here ====================================
-        run: ls
-
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         with:
