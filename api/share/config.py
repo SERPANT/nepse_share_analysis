@@ -1,17 +1,19 @@
+import os
 from box import Box
-from dotenv import dotenv_values
+from dotenv import load_dotenv
+from os.path import join, dirname
 
-# env = Box(dotenv_values("../.env.production"))
-env = Box(dotenv_values())
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
 
 db = Box({
-    "DB_HOST": env.DB_HOST,
-    "DB_PORT": env.DB_PORT,
-    "DB_NAME": env.DB_NAME,
-    "DB_PASSWORD": env.DB_PASSWORD,
-    "DB_USER": env.DB_USER
+    "DB_HOST":  os.environ.get("DB_HOST"),
+    "DB_PORT": os.environ.get("DB_PORT"),
+    "DB_NAME": os.environ.get("DB_NAME"),
+    "DB_PASSWORD": os.environ.get("DB_PASSWORD"),
+    "DB_USER": os.environ.get("DB_USER")
     })
-
+    
 CONFIG = Box({
     "db": db
 })
