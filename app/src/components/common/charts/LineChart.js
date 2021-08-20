@@ -28,6 +28,9 @@ class LineChart extends React.Component {
             datasets: finalDatasets,
           }}
           options={{
+            animation: {
+              duration: 0
+          },
             maintainAspectRatio: false,
             responsive: true,
             plugins: {
