@@ -12,6 +12,8 @@ class NEPSE_share_time_obj(scrapy.Item):
     time_list = scrapy.Field()
 
 class Share_Basic_Info(scrapy.Item):
+    ''' A Scrapy item class that holds basic information of a share object '''
+    
     share_outstanding = scrapy.Field()
     market_price = scrapy.Field()
     percentage_change = scrapy.Field()

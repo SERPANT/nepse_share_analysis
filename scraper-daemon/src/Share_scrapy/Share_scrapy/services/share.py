@@ -26,7 +26,10 @@ def get_share_name_from_symbol(share_symbol):
 
 
 def fetch_all():
-    ''' '''
+    ''' Fetch all the shares 
+
+        Returns: Json data for the list of shares
+    '''
     response = get(f'{CONFIG.SHARE}')
 
     return response.json()
