@@ -1,7 +1,12 @@
+import os
 from box import Box
-#from dotenv import dotenv_values
+from dotenv import load_dotenv
+from os.path import join, dirname
 
-BASE_URL = "http://127.0.0.1:5000/api"
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+
+BASE_URL = os.environ.get('BASE_URL')
 
 CONFIG = Box({
     "BASE_URL": BASE_URL,

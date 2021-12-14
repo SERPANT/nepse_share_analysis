@@ -6,6 +6,8 @@ from Share_scrapy.items import Share_Basic_Info
 import Share_scrapy.services.share as share_services
 
 class MerolaganiScrapperSpider(scrapy.Spider):
+    ''' Fetches detailed information about a share '''
+    
     name = 'merolagani_scrapper'
     allowed_domains = ['https://merolagani.com/']
 
