@@ -3,8 +3,7 @@ from box import Box
 from dotenv import load_dotenv
 from os.path import join, dirname
 
-dotenv_path = join(dirname(__file__), '.env')
-load_dotenv(dotenv_path)
+load_dotenv()
 
 db = Box({
     "DB_HOST": os.environ.get("DB_HOST"),
@@ -13,7 +12,7 @@ db = Box({
     "DB_PASSWORD": os.environ.get("DB_PASSWORD"),
     "DB_USER": os.environ.get("DB_USER")
     })
-    
+
 CONFIG = Box({
     "db": db
 })
