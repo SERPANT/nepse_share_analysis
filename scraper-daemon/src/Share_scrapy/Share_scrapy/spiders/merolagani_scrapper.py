@@ -7,7 +7,7 @@ import Share_scrapy.services.share as share_services
 import Share_scrapy.services.share_basic_info as share_basic_info_services
 
 class MerolaganiScrapperSpider(scrapy.Spider):
-    ''' Fetches detailed information about a share '''
+    ''' Fetches detailed information about a share from Mero lagani site '''
     
     name = 'merolagani_scrapper'
     allowed_domains = ['https://merolagani.com/']
@@ -64,9 +64,12 @@ class MerolaganiScrapperSpider(scrapy.Spider):
             Returns: Share_Basic_Info object
         '''
 
+        # Extract all the rows. (Rows from the table with id = accordion has the data)
         rows = response.xpath("//*[@id='accordion']/tbody/tr")
 
+        # A Dictionary obj to store all the rows.
         dic = {}
+        
         for row in rows:
             field = row.xpath("./th/a/text()").get() or row.xpath("./th/text()").get() 
 

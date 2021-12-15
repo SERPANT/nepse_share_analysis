@@ -11,6 +11,8 @@ from Share_scrapy.utils.cmd_args import parse_named_command_line_args
 import Share_scrapy.services.share as share_services
 
 class SharePriceNepseSpider(scrapy.Spider):
+    ''' A scrapy spider that fetches the time series data for each share.'''
+
     name = 'share_price_nepse_spider'
     allowed_domains = ['http://www.nepalstock.com/']
     time = None
@@ -20,9 +22,7 @@ class SharePriceNepseSpider(scrapy.Spider):
             'Share_scrapy.pipelines.share_price_nepse.duplicate_pipeline.DuplicatePipeLine': 300,
             'Share_scrapy.pipelines.share_price_nepse.store_latest_price_data.Store_Latest_price_data': 400,
             'Share_scrapy.pipelines.share_price_nepse.save_share_price_to_data_base.Save_Share_Price_To_Data_Base': 500
-            },
-        # 'FEED_FORMAT': 'json',
-        # 'FEED_URI': '../../../../../data/daily.json'
+            }
         }
 
     def __init__(self, time_val = ''):
@@ -42,12 +42,16 @@ class SharePriceNepseSpider(scrapy.Spider):
 
     
     def find_company_by_value(self, value):
+        ''' Given a share number find the Nepse company'''
+
         for company in self.share_list:
             if company["share_number_nepse"] == value:
                 return company
 
 
     def parse(self, response):
+        ''' Start of the spider '''
+        
         body = response.body
         live_market_data = json.loads(body)
         company_value = int(response.url.split('/')[5])
