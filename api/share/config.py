@@ -14,5 +14,6 @@ db = Box({
     })
 
 CONFIG = Box({
-    "db": db
+    "db": db,
+    "debug": True
 })
