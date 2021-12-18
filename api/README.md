@@ -10,7 +10,7 @@
 
 * Set up .env file inside /api
 
-* Run the app: python ./api/share/app.py
+* Run the app: python ./api/share/app.py or cd ./api/share & flask run
 
 
 # Setup Database
