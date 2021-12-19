@@ -17,7 +17,7 @@ function ShareDetails(props) {
     },
     {
       label: 'EPS',
-      value: shareBasicInfo.eps,
+      value: shareBasicInfo?.eps,
     },
     {
       label: '52 weeks low',
@@ -29,7 +29,7 @@ function ShareDetails(props) {
     },
     {
       label: 'PE Ratio',
-      value: shareBasicInfo.pe_ratio,
+      value: shareBasicInfo?.pe_ratio,
     },
     {
       label: '52 weeks high',
@@ -41,7 +41,7 @@ function ShareDetails(props) {
     },
     {
       label: 'Book Value',
-      value: shareBasicInfo.book_value,
+      value: shareBasicInfo?.book_value,
     },
     {
       label: '120 days average',
@@ -53,7 +53,7 @@ function ShareDetails(props) {
     },
     {
       label: 'PBV',
-      value: shareBasicInfo.pbv,
+      value: shareBasicInfo?.pbv,
     },
     {
       label: '180 days average',
@@ -65,7 +65,7 @@ function ShareDetails(props) {
     },
     {
       label: 'Percentage Divident',
-      value: shareBasicInfo.percentage_bonus,
+      value: shareBasicInfo?.percentage_bonus,
     },
     {
       label: '30 days average volume',
@@ -77,11 +77,11 @@ function ShareDetails(props) {
     },
     {
       label: 'Percentage Bonus',
-      value: shareBasicInfo.percentage_bonus,
+      value: shareBasicInfo?.percentage_bonus,
     },
     {
       label: 'Out standing Share',
-      value: shareBasicInfo.share_outstanding,
+      value: shareBasicInfo?.share_outstanding,
     },
     {
       label: 'Price Change Value',
@@ -89,11 +89,11 @@ function ShareDetails(props) {
     },
     {
       label: 'One year yeild',
-      value: shareBasicInfo.one_year_yield,
+      value: shareBasicInfo?.one_year_yield,
     },
     {
       label: 'Right Share',
-      value: shareBasicInfo.right_share,
+      value: shareBasicInfo?.right_share,
     },
   ];
 
