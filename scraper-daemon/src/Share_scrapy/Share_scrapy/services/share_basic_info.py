@@ -1,4 +1,8 @@
+from datetime import date
+
 from Share_scrapy.utils.https import post
+
+from Share_scrapy.items import Share_Basic_Info
 
 from Share_scrapy.config import CONFIG
 
@@ -6,7 +10,7 @@ def store_share_data(share_basic_info):
     post(CONFIG.SHARE_BASIC_INFO, share_basic_info)
 
 
-def generate_object(merolagani_merolagani_dic): 
+def generate_object(merolagani_dic): 
     ''' 
         Generates a basic share info object. Note: only works if passed merolagani_dic object from mero lagani scrapper.
 
@@ -15,13 +19,13 @@ def generate_object(merolagani_merolagani_dic):
 
         Returns: Share_basic_info object
     '''
-
+    
     share_info_obj = Share_Basic_Info()
     share_info_obj["share_outstanding"] = merolagani_dic["Shares Outstanding"]
     share_info_obj["market_price"] = merolagani_dic["Market Price"]
     share_info_obj["percentage_change"] = merolagani_dic["% Change"]
 
-    low, high = merolagani_dic["52 Weeks High - Low"].split("-")
+    low, high = merolagani_dic["52 Weeks Low - High"].split("-")
     share_info_obj["fifty_two_weeks_low"] = float(str(low).replace(',', '')) 
     share_info_obj["fifty_two_weeks_high"] = float(str(high).replace(',', '')) 
     share_info_obj["hundred_eighty_average"] = float(str(merolagani_dic["180 Day Average"]).replace(',', ''))
@@ -45,6 +49,6 @@ def generate_object(merolagani_merolagani_dic):
     share_info_obj["right_share_value"] = merolagani_dic["Right Share"].split("(")[0]
     share_info_obj["thirty_day_average_volume"] = float(str(merolagani_dic["30-Day Avg Volume"]).replace(',', ''))
     share_info_obj["recorded_date"] = date.today()
-    share_info_obj["share_symbol"] = ((response.url.split("="))[1]).upper()
+    share_info_obj["share_symbol"] = merolagani_dic["Share Symbol"]
 
     return share_info_obj

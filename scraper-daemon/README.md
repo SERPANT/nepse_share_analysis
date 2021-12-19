@@ -22,3 +22,7 @@
 * Run the share_scrapper_nepse spider 
 
 * Run the share_price_nepse_spider 
+
+* Setup moving average category
+
+* Run mero lagany scraper.
