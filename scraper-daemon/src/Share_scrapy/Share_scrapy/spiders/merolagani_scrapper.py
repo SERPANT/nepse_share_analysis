@@ -1,8 +1,6 @@
 import scrapy
 from scrapy import Request
-from datetime import date
 
-from Share_scrapy.items import Share_Basic_Info
 import Share_scrapy.services.share as share_services
 import Share_scrapy.services.share_basic_info as share_basic_info_services
 
@@ -69,6 +67,8 @@ class MerolaganiScrapperSpider(scrapy.Spider):
 
         # A Dictionary obj to store all the rows.
         dic = {}
+
+        dic["Share Symbol"] = ((response.url.split("="))[1]).upper()
         
         for row in rows:
             field = row.xpath("./th/a/text()").get() or row.xpath("./th/text()").get() 
