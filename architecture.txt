@@ -16,6 +16,7 @@
 * Need a average line in bar graphs
 * till when they are top gainers 
 * Ammount of transaction of each share
+* paid up capital
 
 
 * floor sheet chart.
